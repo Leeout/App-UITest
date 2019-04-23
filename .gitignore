@@ -101,7 +101,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-*.png
 .idea/
 ~*
 *__pycache__*
