@@ -1,4 +1,7 @@
 # -*- coding:utf-8 -*-
+"""
+家长端学生登录后的主页tab元素(涉及4个tab)
+"""
 
 home_page_element = {
     "appointment_course": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ImageView",

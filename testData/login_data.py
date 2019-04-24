@@ -1,4 +1,7 @@
 # -*- coding:utf-8 -*-
+"""
+家长端学生登录涉及的元素
+"""
 login = {
     "mobile": {
         "position": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget." \

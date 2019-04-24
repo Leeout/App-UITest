@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+封装 识别元素、点击元素、发送字符的操作方法
+"""
 import os
 from logger import logger
 from time_base import get_current_time

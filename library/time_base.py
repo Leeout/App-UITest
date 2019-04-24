@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+"""
+获取各种格式时间的公用方法
+"""
 import datetime
 
 
