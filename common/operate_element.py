@@ -8,7 +8,7 @@ from time_base import get_current_time
 
 get_file = os.path
 path = get_file.dirname(get_file.realpath(__file__))
-yaml = get_file.join(path, "../testReport/error_screenshot/")
+yaml = get_file.join(path, "../test_report/error_screenshot/")
 
 
 def operate_element(driver, **kwargs):

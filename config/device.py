@@ -6,10 +6,10 @@ from logger import logger
 from selenium import webdriver
 
 device = {
-    "platformName": "Android",
-    "platformVersion": "6.0.1",
+    "platformName": "testAndroid",
+    "platformVersion": "8.0.0",
     "deviceName": "HuaWei",
-    "udid": "emulator-5554",
+    "udid": "GWY0217824001505",
     "appActivity": ".account.accountlogin.LoginActivity",
     "appPackage": "com.dadaabc.zhuozan.dadaabcstudent",
     "remoteUrl": "http://localhost:4723/wd/hub"
