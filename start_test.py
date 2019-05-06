@@ -3,7 +3,7 @@
 运行测试的入口
 """
 import unittest
-from device import device_info
+from android_device import device_info
 from test01_student_login import student_login
 
 

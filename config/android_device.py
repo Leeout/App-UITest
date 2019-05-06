@@ -1,16 +1,16 @@
 # -*- coding:utf-8 -*-
 """
-存放被测设备的基本信息
+存放被测android设备的基本信息
 """
 from logger import logger
 from selenium import webdriver
 
 device = {
-    "platformName": "testAndroid",
+    "platformName": "Android",
     "platformVersion": "8.0.0",
     "deviceName": "HuaWei",
-    "udid": "GWY0217824001505",
-    "appActivity": ".account.accountlogin.LoginActivity",
+    "udid": "GWY0217824001505",  # 华为mate9
+    "appActivity": "com.dadaabc.zhuozan.dadaabcstudent.default",
     "appPackage": "com.dadaabc.zhuozan.dadaabcstudent",
     "remoteUrl": "http://localhost:4723/wd/hub"
 }
