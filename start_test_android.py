@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-运行测试的入口
+运行android测试的入口
 """
 import unittest
-from android_device import device_info
-from test01_student_login import student_login
+from android import device_info
+from test1_android_student_login import student_login
 
 
 class AppTests(unittest.TestCase):
     def setUp(self):
-        self.driver = device_info()  # 初始化加载安卓设备
+        self.driver = device_info()  # 初始化加载android设备
 
     def tearDown(self):
         self.driver.quit()  # case执行完退出

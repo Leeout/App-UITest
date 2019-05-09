@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 """
-家长端学生登录涉及的元素
+android家长端学生登录涉及的元素
 """
 login = {
     "startup_page_click_login": {

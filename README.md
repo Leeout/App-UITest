@@ -8,6 +8,8 @@
 
 >docs                     测试涉及文档
 
+>report                   测试截图、报告存放
+
 >testAndroid              测试 android机
 
 >testIOS                  测试 ios机

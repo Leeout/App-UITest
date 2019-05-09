@@ -1,0 +1,5 @@
+ios资料汇总：
+
+一、查看ios机器唯一标识符：
+1.ios模拟器用的是uuid;而ios真机使用的是udid。
+终端输入命令可得到想要的模拟器的字符串:instruments -s devices
