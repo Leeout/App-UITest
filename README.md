@@ -18,4 +18,6 @@
 
 >README.md                使用说明
 
->start_test.py            启动运行测试
+>start_test_android.py    启动测试android设备
+
+>start_test_ios.py        启动测试ios设备
