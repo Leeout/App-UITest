@@ -1,65 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58ce5f80-27b1-4b08-a9e8-5c742e0c0416" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 20:36:35.870616.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 20:36:41.431268.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:01:03.419410.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:20:53.936354.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:20:59.303472.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:21:04.640475.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:21:11.078953.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:21:16.806143.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:21:22.701222.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:24:49.369452.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:24:55.327310.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:25:01.700038.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:25:08.065311.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:25:14.648973.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:25:21.907482.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:27:33.369164.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:27:38.985851.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:27:44.659205.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:27:51.451026.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:27:58.181513.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:28:05.070121.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:35:40.465598.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:35:46.091319.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:40:23.340899.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:40:29.356994.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:40:35.240813.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:40:41.002480.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:40:46.928186.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:40:52.911318.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:50:37.330605.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:50:42.847201.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:50:48.238873.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:50:53.884123.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:50:59.697620.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:51:05.376895.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:56:24.224641.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:58:27.647164.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:58:33.359071.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:58:39.723718.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:58:45.592756.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:58:51.235850.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:58:56.831393.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:59:28.315098.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:59:33.923407.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 21:59:40.823207.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:00:13.609558.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:00:19.953784.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:00:25.477059.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:00:31.214594.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:00:36.883122.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:00:43.095405.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:01:53.455158.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:01:59.347860.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:02:05.916527.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:02:11.534364.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/screenshot/ios/error_2019-05-09 22:02:18.285870.png" beforeDir="false" />
-    </list>
+    <list default="true" id="58ce5f80-27b1-4b08-a9e8-5c742e0c0416" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,85 +37,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/start_test_android.py">
+        <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/start_test_ios.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-              <folding>
-                <element signature="e#43#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testAndroid/test_case/test1_android_student_login.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-              <folding>
-                <element signature="e#50#75#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testIOS/test_case/test1_ios_student_login.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-              <folding>
-                <element signature="e#46#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/common/time_base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testIOS/test_data/ios_login.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-350">
-              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testIOS/test_data/ios_start_page.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/operate_element.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-84">
-              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-              <folding>
-                <element signature="e#63#73#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -183,6 +50,27 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/operate_element.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+              <folding>
+                <element signature="e#63#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -261,7 +149,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -278,24 +166,6 @@
             <path>
               <item name="Appium_UI_Test" type="b2602c69:ProjectViewProjectNode" />
               <item name="appium_ui_test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Appium_UI_Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appium_ui_test" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Appium_UI_Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appium_ui_test" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
-              <item name="screenshot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Appium_UI_Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appium_ui_test" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
-              <item name="screenshot" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -500,7 +370,7 @@
       <workItem from="1557214754888" duration="919000" />
       <workItem from="1557221629399" duration="2207000" />
       <workItem from="1557283546296" duration="4000" />
-      <workItem from="1557369473194" duration="25224000" />
+      <workItem from="1557369473194" duration="25741000" />
     </task>
     <servers />
   </component>
@@ -537,7 +407,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103081000" />
+    <option name="totallyTimeSpent" value="103598000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -549,9 +419,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22246066" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22246066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -565,7 +435,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.488228" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.47831476" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3977695" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -704,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/ios">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -746,23 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/operate_element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-          <folding>
-            <element signature="e#63#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -805,15 +651,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="95" column="12" lean-forward="true" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/time_base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/operate_element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+          <folding>
+            <element signature="e#63#73#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
