@@ -44,9 +44,14 @@ def scroll_screen(driver):
     # :param number: 滚动的次数 默认滑动 次
     try:
         logger.info('开始滑动屏幕......')
-        TouchAction(driver).press(x=1, y=395).move_to(x=5, y=419).release().perform()
+        # 滑屏第一种方法：
+        # TouchAction(driver).press(x=1, y=395).move_to(x=5, y=419).release().perform()
+
+        # 滑屏第二种方法：
         # for i in range(number):
         #     driver.execute_script("mobile: scroll", {"direction": direction})
+
+        # 滑屏第三种方法：
         # size = driver.get_window_size()
         # logger.debug('设备尺寸：%s', size)
         # x1 = int(size['width'] * 0.75)

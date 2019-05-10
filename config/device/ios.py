@@ -12,8 +12,8 @@ device = {
     "deviceName": "iPhone Xʀ",  # xcode ios模拟器
     "uuid": "4CBB6C28-67C2-4ED5-B357-80B5D7B905B8",  # ios模拟器的唯一标识符
     # 'app': '/Users/lijie/Desktop/DaDaClass(1).app',  # 安装app的路径
-    'app': 'com.dadaabc.DaDaClass',
-    'autoAcceptAlerts': 'true',
+    'app': 'com.dadaabc.DaDaClass',  # bundle id 与 android appPackage同理，appium获取这个可以唤醒app
+    'autoAcceptAlerts': 'true',  # appium提供的自动关闭ios系统级弹窗参数
     "remoteUrl": "http://localhost:4723/wd/hub"
 }
 
