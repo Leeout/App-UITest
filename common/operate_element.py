@@ -7,6 +7,7 @@ import sys
 import os
 from logger import logger
 from time_base import get_current_time
+
 # from appium.webdriver.common.touch_action import TouchAction
 
 reload(sys)
@@ -48,8 +49,9 @@ def scroll_screen(driver):
         # TouchAction(driver).press(x=1, y=395).move_to(x=5, y=419).release().perform()
 
         # 滑屏第二种方法：
-        for i in range(number):
-            driver.execute_script("mobile: scroll", {"direction": direction})
+        # for i in range(number):
+        #     driver.execute_script("mobile: scroll", {"direction": direction})
+        # return
 
         # 滑屏第三种方法：
         # size = driver.get_window_size()
@@ -72,13 +74,18 @@ def __find_element(driver, find_type, element_position):
     :param driver: 初始化设备信息 self.driver
     :param find_type: 获取元素方式
     :param element_position: 元素位置
-    :return:
+    :return: element 找到的元素
     """
-    if 'xpath' in find_type:
-        element = driver.find_element_by_xpath(element_position)
-    else:
-        element = driver.find_element_by_id(element_position)
-    return element
+    try:
+        if 'xpath' in find_type:
+            element = driver.find_element_by_xpath(element_position)
+        else:
+            element = driver.find_element_by_id(element_position)
+        return element
+
+    except Exception as error:
+        logger.error('find element fail:%s', error)
+        return
 
 
 def operate_element(driver, platform, **kwargs):
@@ -118,9 +125,6 @@ def operate_element(driver, platform, **kwargs):
         except Exception as error:
             logger.error("operation exception %s", error)
             driver.get_screenshot_as_file(yaml + platform + '/error_' + get_current_time() + '.png')
+            driver.quit()
 
     return
-
-
-if __name__ == '__main__':
-    print yaml
