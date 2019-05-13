@@ -22,3 +22,9 @@ adb shell dumpsys window w |grep \/ |grep name=       获取当前正在运行�
 [Appium] Welcome to Appium v1.12.1
 [Appium] Appium REST http interface listener started on 0.0.0.0:4723
 
+四、服务器上执行UI自动化测试
+1.appium server开启成功
+2.本地设备与服务器建联成功
+3.下载框架代码
+4.运行start_test_android.py
+参考步骤：http://docs.dadaorg.com/pages/viewpage.action?pageId=10879248
