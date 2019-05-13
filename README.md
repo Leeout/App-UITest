@@ -1,7 +1,4 @@
-### 写在前面
-1.考虑到上海QA团队成员的实际情况，决定从0到1实现APP UI自动化测试框架
-
-#### 2.目录结构
+#### 1.目录结构
 >app                      存放被测app
 
 >common                   公用方法
@@ -23,3 +20,6 @@
 >start_test_android.py    启动测试android设备
 
 >start_test_ios.py        启动测试ios设备
+
+#### 2.appium server 环境安装
+在 docs》appium_server_install下有详细说明
