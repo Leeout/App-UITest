@@ -3,8 +3,8 @@
 运行android测试的入口
 """
 import unittest
-from android import device_info
-from test1_android_student_login import student_login
+from config.device.android import device_info
+from testAndroid.test_case.test1_android_student_login import student_login
 
 
 class AppTests(unittest.TestCase):

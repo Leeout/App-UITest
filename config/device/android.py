@@ -2,7 +2,7 @@
 """
 存放被测android设备的基本信息
 """
-from logger import logger
+from common.logger import logger
 from selenium import webdriver
 
 device = {
@@ -12,7 +12,7 @@ device = {
     "udid": "GWY0217824001505",  # 华为mate9的唯一标识符
     "appActivity": "com.dadaabc.zhuozan.dadaabcstudent.default",
     "appPackage": "com.dadaabc.zhuozan.dadaabcstudent",
-    "remoteUrl": "http://localhost:4723/wd/hub"
+    "remoteUrl": "http://192.168.132.232:4723/wd/hub"
 }
 
 

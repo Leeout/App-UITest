@@ -3,14 +3,10 @@
 该文件是操作元素的一系列方法封装
 todo:进webview
 """
-import sys
 import os
-from logger import logger
-from time_base import get_current_time
-from appium.webdriver.common.touch_action import TouchAction
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
+from common.logger import logger
+from common.time_base import get_current_time
 
 get_file = os.path
 path = get_file.dirname(get_file.realpath(__file__))
@@ -111,4 +107,4 @@ def operate_element(driver, platform, **kwargs):
 
 
 if __name__ == '__main__':
-    print yaml
+    print(yaml)

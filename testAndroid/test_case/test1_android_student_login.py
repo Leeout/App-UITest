@@ -2,9 +2,9 @@
 """
 android家长端学生登录的用例
 """
-from logger import logger
-from android_login import login
-from operate_element import operate_element
+from common.logger import logger
+from testAndroid.test_data.android_login import login
+from common.operate_element import operate_element
 
 
 def student_login(driver):

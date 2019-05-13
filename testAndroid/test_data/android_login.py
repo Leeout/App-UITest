@@ -42,4 +42,4 @@ login = {
 }
 
 if __name__ == '__main__':
-    print login['startup_page_click_login']
+    print(login['startup_page_click_login'])
