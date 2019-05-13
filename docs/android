@@ -2,3 +2,29 @@ android资料汇总：
 
 一、android adb命令汇总
 adb shell dumpsys window w |grep \/ |grep name=       获取当前正在运行的应用程序的包名以及入口activity
+
+二、android机器与linux服务器连接
+1.先在本地电脑上，把手机5555端口打开
+使用：adb -s ${devices_id} tcpip 5555
+注：${devices_id}是 adb devices获取的android唯一标识符
+
+2.然后在linux上
+使用：adb connect 手机ip:5555
+注：手机ip一般可在手机设置》关于手机》状态消息》ip地址查看到
+
+3.然后拔掉usb线
+在linux上使用adb devices查看设备连接
+
+三、linux服务器上appium server开启
+直接输入appium 回车即可
+如：
+[root@localhost abc-qa-app-UITest]# appium
+[Appium] Welcome to Appium v1.12.1
+[Appium] Appium REST http interface listener started on 0.0.0.0:4723
+
+四、服务器上执行UI自动化测试
+1.appium server开启成功
+2.本地设备与服务器建联成功
+3.下载框架代码
+4.运行start_test_android.py
+参考步骤：http://docs.dadaorg.com/pages/viewpage.action?pageId=10879248

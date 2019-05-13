@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-该文件是操作元素的一系列方法封装
+该文件是操作设备的一系列方法封装
 todo:进webview
 """
 import os
@@ -15,7 +15,7 @@ yaml = get_file.join(path, "../report/screenshot/")
 
 def handle_permission_popup(driver):
     """
-    该方法用于处理系统弹窗遮挡，默认点击"同意"
+    该方法用于处理系统弹窗，默认点击"同意"
     :param driver: 初始化设备信息 self.driver
     """
     try:
@@ -46,6 +46,7 @@ def scroll_screen(driver):
         # 滑屏第二种方法：
         # for i in range(number):
         #     driver.execute_script("mobile: scroll", {"direction": direction})
+        # return
 
         # 滑屏第三种方法：
         # size = driver.get_window_size()
@@ -59,6 +60,26 @@ def scroll_screen(driver):
 
     except Exception as error:
         logger.error("scroll screen exception: %s", error)
+        return
+
+
+def __find_element(driver, find_type, element_position):
+    """
+    该方法用于识别元素
+    :param driver: 初始化设备信息 self.driver
+    :param find_type: 获取元素方式
+    :param element_position: 元素位置
+    :return: element 找到的元素
+    """
+    try:
+        if 'xpath' in find_type:
+            element = driver.find_element_by_xpath(element_position)
+        else:
+            element = driver.find_element_by_id(element_position)
+        return element
+
+    except Exception as error:
+        logger.error('find element fail:%s', error)
         return
 
 
@@ -85,10 +106,7 @@ def operate_element(driver, platform, **kwargs):
                 # 隐式等待，使用隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
                 driver.implicitly_wait(5)  # 设置5秒时间等待
 
-                if 'xpath' in new_dic['find_type']:
-                    element = driver.find_element_by_xpath(new_dic['position'])
-                else:
-                    element = driver.find_element_by_id(new_dic['position'])
+                element = __find_element(driver, new_dic['find_type'], new_dic['position'])
 
                 if 'click' in new_dic['operate_type']:
                     element.click()
@@ -102,6 +120,7 @@ def operate_element(driver, platform, **kwargs):
         except Exception as error:
             logger.error("operation exception %s", error)
             driver.get_screenshot_as_file(yaml + platform + '/error_' + get_current_time() + '.png')
+            driver.quit()
 
     return
 
