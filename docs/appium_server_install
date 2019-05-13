@@ -1,0 +1,18 @@
+如何在linux服务器上安装appium：
+
+1，首先需要在linux系统上安装node，一般系统都会默认安装，可以使用 'node -v' 命令查看是否已经安装node
+centos上安装node的命令是，yum install node
+安装node后，查看一下npm是否已经安装，'npm -v'命令查看
+
+2，安装cnpm
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+安装完成后，在/etc/profile中添加cnpm命令路径
+比如：export PATH=$PATH:/usr/local/node/node-v9.0.0-linux-x64/bin
+然后执行：source /etc/profile
+
+3，安装appium
+cnpm install -g appium（此时会遇到权限的问题，解决方法是，修改了报错文件夹的所有者：chown -R appium node_modules）
+再次执行cnpm install -g appium 等待安装结束
+
+4，安装结束后，使用'appium -v'查看是否安装成功
+(1) 可以使用appium-doctor命令查看appium相关环境是否完全搭建成功，红叉部分表示没有设置完全
