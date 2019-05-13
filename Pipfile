@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 colorlog = "*"
+selenium = "*"
 
 [dev-packages]
 pylint = "*"
