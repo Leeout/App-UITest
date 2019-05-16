@@ -11,7 +11,7 @@ from operate_element import scroll_screen, operate_element
 
 
 def __case_collection(driver):
-    # scroll_screen(driver)
+    scroll_screen(driver)
     # operate_element(driver, 'ios', **start_page)
     operate_element(driver, 'ios', **home_page)
     # operate_element(driver, 'ios', **login)

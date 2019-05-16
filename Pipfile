@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 colorlog = "*"
 selenium = "*"
+nose = "*"
+appium-python-client = "*"
 
 [dev-packages]
 pylint = "*"

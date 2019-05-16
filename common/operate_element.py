@@ -31,22 +31,23 @@ def handle_permission_popup(driver):
         return
 
 
-def scroll_screen(driver):
+def scroll_screen(driver, duration='right', number=2):
     """
     todo:该方法用于滑屏操作
     :param driver: 初始化设备信息 self.driver
+    :param duration: 滑动持续时长
+    :param number: 滚动的次数 默认滑动 次
     """
-    # :param duration: 滑动持续时长
-    # :param number: 滚动的次数 默认滑动 次
     try:
         logger.info('开始滑动屏幕......')
         # 滑屏第一种方法：
         # TouchAction(driver).press(x=1, y=395).move_to(x=5, y=419).release().perform()
 
         # 滑屏第二种方法：
-        # for i in range(number):
-        #     driver.execute_script("mobile: scroll", {"direction": direction})
-        # return
+        for i in range(number):
+            driver.execute_script("mobile: swipe", {"direction": duration})
+            logger.info('已滑动屏幕：%s', i + 1)
+        return
 
         # 滑屏第三种方法：
         # size = driver.get_window_size()
