@@ -3,8 +3,8 @@
 运行ios测试的入口
 """
 import unittest
-from ios import device_info
-from test1_ios_student_login import student_login
+from config.device.ios import device_info
+from testIOS.test_case.test1_ios_student_login import student_login
 
 
 class AppTests(unittest.TestCase):

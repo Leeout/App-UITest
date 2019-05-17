@@ -4,17 +4,17 @@ ios家长端学生登录的用例
 """
 import time
 from logger import logger
-from ios_start_page import start_page
-from ios_home_page import home_page
-from ios_login import login
-from operate_element import scroll_screen, operate_element
+from testIOS.test_data.ios_start_page import start_page
+from testIOS.test_data.ios_home_page import home_page
+from testIOS.test_data.ios_login import login
+from common.operate_element import scroll_screen, operate_element
 
 
 def __case_collection(driver):
     scroll_screen(driver)
-    # operate_element(driver, 'ios', **start_page)
+    operate_element(driver, 'ios', **start_page)
     operate_element(driver, 'ios', **home_page)
-    # operate_element(driver, 'ios', **login)
+    operate_element(driver, 'ios', **login)
 
 
 def student_login(driver):
