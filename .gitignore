@@ -112,4 +112,4 @@ venv.bak/
 *$*.xlsx
 *_test_report.html
 /pylint_report.txt
-Pipfile.lock
+
