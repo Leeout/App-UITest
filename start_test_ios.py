@@ -4,7 +4,7 @@
 """
 import unittest
 from config.device.ios import device_info
-from testIOS.test_case.test1_ios_student_login import student_login
+from testIOS.test_case.parents_app.test1_ios_student_login import setup_page_student_login
 
 
 class AppTests(unittest.TestCase):
@@ -15,7 +15,7 @@ class AppTests(unittest.TestCase):
         self.driver.quit()  # case执行完退出
 
     def test_run_case(self):
-        student_login(self.driver)  # 学生登录
+        setup_page_student_login(self.driver)  # 学生登录
 
 
 if __name__ == '__main__':

@@ -3,7 +3,7 @@
 android家长端学生登录的用例
 """
 from common.logger import logger
-from testAndroid.test_data.android_login import login
+from testAndroid.test_data.parents_app.android_login import login
 from common.operate_element import operate_element
 
 

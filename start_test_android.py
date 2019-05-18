@@ -4,7 +4,7 @@
 """
 import unittest
 from config.device.android import device_info
-from testAndroid.test_case.test1_android_student_login import student_login
+from testAndroid.test_case.parents_app.test1_android_student_login import student_login
 
 
 class AppTests(unittest.TestCase):

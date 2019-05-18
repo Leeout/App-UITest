@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 该文件是操作设备的一系列方法封装
-todo:进webview
+todo:1.滑屏  2.进webview
 """
 import os
 
@@ -123,6 +123,7 @@ def operate_element(driver, platform, **kwargs):
         except Exception as error:
             logger.error("operation exception %s", error)
             driver.get_screenshot_as_file(yaml + platform + '/error_' + get_current_time() + '.png')
+            logger.debug('当前生成了一张错误截图！')
             driver.quit()
 
     return
