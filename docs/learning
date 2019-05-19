@@ -1,0 +1,19 @@
+一、读懂appium原理，看这篇就够了
+https://www.jianshu.com/p/30b3b2d6b901
+
+二、appium服务关键字
+https://www.cnblogs.com/puresoul/p/4709189.html
+
+
+踩坑集：
+1.运行ios真机测试报错code65
+解：这个提示是因为手机上的WebDriverAgent程序没有安装成功，目前采取了重新build WDA工程的方式重新安装WebDriverAgent程序
+参考方案（第二种个人免费账户）：https://blog.csdn.net/wangmcn1984/article/details/79061958 或 https://github
+.com/imurchie/appium-xcuitest-driver/blob/isaac-rs/docs/real-device-config.md
+
+2.运行ios真机测试提示当前 ios版本的sdk不在支持测试的列表中
+解：
+1)先将/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport 下的你想要的sdk版本复制到
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs中
+2）在/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform 的 Info.plist文件中将最小支持的sdk版本替换为
+你刚才复制到/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDK 的sdk版本即可

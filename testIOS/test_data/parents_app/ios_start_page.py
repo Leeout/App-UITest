@@ -9,7 +9,7 @@ start_page = {
         'operate_type': 'click',
         'operate_message': '家长端app启动页debug弹窗',
         'input_character': ''
-    },
+    }
     # "skip": {
     #     'position': '//XCUIElementTypeButton[@name="跳过"]',
     #     'find_type': 'xpath',

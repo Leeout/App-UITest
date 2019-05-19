@@ -3,13 +3,13 @@
 运行android测试的入口
 """
 import unittest
-from config.device.android import device_info
+from config.connect_android import setup_android_device
 from testAndroid.test_case.parents_app.test1_android_student_login import student_login
 
 
 class AppTests(unittest.TestCase):
     def setUp(self):
-        self.driver = device_info()  # 初始化加载android设备
+        self.driver = setup_android_device()  # 初始化加载android设备
 
     def tearDown(self):
         self.driver.quit()  # case执行完退出
