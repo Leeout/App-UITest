@@ -1,6 +1,7 @@
 """组装设备信息"""
-from common.logger import logger
 from selenium import webdriver
+
+from common.logger import logger
 from config.test_device.android import android
 
 
