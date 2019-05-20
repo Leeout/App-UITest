@@ -22,7 +22,7 @@
 >start_test_ios.py        启动测试ios设备
 
 #### 2.appium server 环境安装
-在 docs > appium_server_install下有详细说明
+在 docs > install_env下有详细说明
 
 #### 3.项目静态代码检查
 pylint abc-qa-app-UITest --rcfile=pylint.conf
