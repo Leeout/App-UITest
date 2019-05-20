@@ -8,7 +8,7 @@ home_page = {
                     'TabBar[1]/XCUIElementTypeButton[2]',
         'find_type': 'xpath',
         'operate_type': 'click',
-        'operate_message': '点击主页：【约课】',
+        'operate_message': '主页：【约课】',
         'input_character': ''
     }
 }

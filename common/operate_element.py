@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 该文件是操作设备的一系列方法封装
-todo:进webview
+todo:1.滑屏  2.进webview
 """
 import os
 
@@ -64,7 +64,7 @@ def scroll_screen(driver, duration='right', number=2):
         return
 
 
-def __find_element(driver, find_type, element_position):
+def __find_element(driver, platform, find_type, element_position):
     """
     该方法用于识别元素
     :param driver: 初始化设备信息 self.driver
@@ -75,6 +75,8 @@ def __find_element(driver, find_type, element_position):
     try:
         if 'xpath' in find_type:
             element = driver.find_element_by_xpath(element_position)
+        elif 'id' in find_type and platform == 'ios':
+            element = driver.find_element_by_accessibility_id(element_position)
         else:
             element = driver.find_element_by_id(element_position)
         return element
@@ -107,7 +109,7 @@ def operate_element(driver, platform, **kwargs):
                 # 隐式等待，使用隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
                 driver.implicitly_wait(5)  # 设置5秒时间等待
 
-                element = __find_element(driver, new_dic['find_type'], new_dic['position'])
+                element = __find_element(driver, platform, new_dic['find_type'], new_dic['position'])
 
                 if 'click' in new_dic['operate_type']:
                     element.click()
@@ -121,6 +123,7 @@ def operate_element(driver, platform, **kwargs):
         except Exception as error:
             logger.error("operation exception %s", error)
             driver.get_screenshot_as_file(yaml + platform + '/error_' + get_current_time() + '.png')
+            logger.debug('当前生成了一张错误截图！')
             driver.quit()
 
     return

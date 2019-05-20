@@ -3,19 +3,20 @@
 运行ios测试的入口
 """
 import unittest
-from ios import device_info
-from test1_ios_student_login import student_login
+from config.connect_ios import setup_ios_device
+
+from testIOS.test_case.parents_app.test1_ios_student_login import setup_page_student_login
 
 
 class AppTests(unittest.TestCase):
     def setUp(self):
-        self.driver = device_info()  # 初始化加载ios设备
+        self.driver = setup_ios_device()  # 初始化加载ios设备
 
     def tearDown(self):
         self.driver.quit()  # case执行完退出
 
     def test_run_case(self):
-        student_login(self.driver)  # 学生登录
+        setup_page_student_login(self.driver)  # 学生登录
 
 
 if __name__ == '__main__':
