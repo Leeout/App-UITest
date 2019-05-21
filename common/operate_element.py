@@ -123,7 +123,7 @@ def operate_element(driver, platform, **kwargs):
         except Exception as error:
             logger.error("operation exception %s", error)
             driver.get_screenshot_as_file(yaml + platform + '/error_' + get_current_time() + '.png')
-            logger.debug('当前生成了一张错误截图！')
+            logger.warning('当前生成了一张错误截图！')
             driver.quit()
 
     return

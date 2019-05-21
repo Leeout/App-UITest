@@ -2,10 +2,17 @@
 """
 运行ios测试的入口
 """
+import os
 import unittest
+import HtmlTestRunner
+from common.time_base import get_current_time
 from config.connect_ios import setup_ios_device
 
 from testIOS.test_case.parents_app.test1_ios_student_login import setup_page_student_login
+
+get_file = os.path
+path = get_file.dirname(get_file.realpath(__file__))
+yaml = get_file.join(path, "../report/screenshot/ios")
 
 
 class AppTests(unittest.TestCase):
@@ -23,3 +30,11 @@ if __name__ == '__main__':
     suite = unittest.TestSuite()
     suite.addTest(AppTests("test_run_case"))
 
+    filename = yaml + 'App_UI自动化测试报告' + get_current_time() + '.html'
+    file = open(filename, 'wb')
+    runner = HtmlTestRunner.HTMLTestRunner(
+        output='test_report',
+        report_title='App_UI自动化测试报告',
+    )
+    runner.run(suite)
+    file.close()
