@@ -11,18 +11,21 @@
 "appPackage": 被测软件包名,appium获取这个可以唤醒app
 "remoteUrl": appium server的地址
 """
+from common.android_adb import AndroidAdb
 
 platform_name = "Android"
 app_activity = "com.dadaabc.zhuozan.dadaabcstudent.default"
 app_package = "com.dadaabc.zhuozan.dadaabcstudent"
 remote_appium_url = "http://192.168.132.232:4723/wd/hub"  # Linux服务器上的appium
 
+adb = AndroidAdb()
+
 android = {
-    "huawei_mate9": {
+    adb.get_device_brand(): {
         "platformName": platform_name,
-        "platformVersion": "8.0.0",
-        "deviceName": "HuaWei",
-        "udid": "GWY0217824001505",
+        "platformVersion": adb.get_platform_version(),
+        "deviceName": adb.get_device_model(),
+        "udid": adb.get_device_id(),
         "appActivity": app_activity,
         "appPackage": app_package,
         "remoteUrl": remote_appium_url

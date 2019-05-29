@@ -20,7 +20,8 @@ class AppTests(unittest.TestCase):
         self.driver = setup_ios_device()  # 初始化加载ios设备
 
     def tearDown(self):
-        self.driver.quit()  # case执行完退出
+        # self.driver.quit()  # case执行完退出
+        pass  # case执行完不退出
 
     def test_run_case(self):
         setup_page_student_login(self.driver)  # 学生登录
