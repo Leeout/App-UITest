@@ -2,10 +2,13 @@
 from selenium import webdriver
 
 from common.logger import logger
+from common.execute_command import execute_shell
 from config.test_device.android import android
+from config.command.android_adb import ADB
 
 
 def setup_android_device():
+    execute_shell(ADB['setup_adb'])
     desired_caps = dict()
     for key in android:
         device = android[key]
