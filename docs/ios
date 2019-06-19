@@ -1,8 +1,13 @@
 ios资料汇总：
 
-一、查看ios机器唯一标识符：
-1.ios模拟器用的是uuid;而ios真机使用的是udid。
-终端输入命令可得到想要的模拟器的字符串:instruments -s devices
+一、查看iOS机器唯一标识符：
+1.获得当前所连接的所有机器的设备标识符（包括模拟器）
+终端执行: instruments -s devices
+2.查看当前所连接的iOS设备标识符
+终端执行: idevice_id -l
 
-二、查看Xcode中SDK版本
-终端执行 xcodebuild -showsdks
+二、查看应用的BundleID：
+1.终端执行: ideviceinstaller -l
+
+三、查看Xcode中SDK版本
+终端执行: xcodebuild -showsdks

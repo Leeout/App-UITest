@@ -8,7 +8,7 @@ import HtmlTestRunner
 from common.time_base import get_current_time
 from config.connect_ios import setup_ios_device
 
-from testIOS.test_case.parents_app.test1_ios_student_login import setup_page_student_login
+from testIOS.case.parents_app.test1_ios_student_login import setup_page_student_login
 
 get_file = os.path
 path = get_file.dirname(get_file.realpath(__file__))

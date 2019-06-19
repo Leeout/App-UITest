@@ -17,12 +17,11 @@
 
 >README.md                使用说明
 
->start_test_android.py    启动测试android设备
+>run.sh 启动测试的脚本
 
->start_test_ios.py        启动测试ios设备
 
 #### 2.appium server 环境安装
-在 docs > install_env下有详细说明
+在 docs > environment 详细说明
 
 #### 3.项目静态代码检查
 pylint abc-qa-app-UITest --rcfile=pylint.conf

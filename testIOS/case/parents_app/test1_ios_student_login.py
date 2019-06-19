@@ -6,9 +6,9 @@ import time
 from common.logger import logger
 from common.operate_element import operate_element
 
-from testIOS.test_data.parents_app.ios_start_page import start_page
-from testIOS.test_data.parents_app.ios_login import login
-from testIOS.test_data.parents_app.ios_home_page_oral_practice import home_page_oral_practice
+from testIOS.element.parents_app.ios_start_page import start_page
+from testIOS.element.parents_app.ios_login import login
+from testIOS.element.parents_app.ios_home_page_oral_practice import home_page_oral_practice
 
 
 def __case_collection(driver):
