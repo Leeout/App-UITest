@@ -1,5 +1,5 @@
 """
-ios学生端主页-头部 可点击的按钮元素组合
+ios学生端主页-头部 可点击的按钮元素 组合
 """
 
 my_info = {
@@ -36,13 +36,25 @@ my_info = {
         'operate_message': '点击【勋章墙】',
         'input_character': ''
     },
-    "go_back": {
+    "go_back1": {
         'position': '//XCUIElementTypeButton[@name="common icon back"]',
         'find_type': 'xpath',
         'operate_type': 'click',
         'operate_message': '点击左上角【<】',
         'input_character': ''
     },
-
-
+    "notification_center": {
+        'position': '//XCUIElementTypeButton[@name="home icon notification"]',
+        'find_type': 'xpath',
+        'operate_type': 'click',
+        'operate_message': '点击通知中心',
+        'input_character': ''
+    },
+    "go_back2": {
+        'position': '//XCUIElementTypeButton[@name="common icon back"]',
+        'find_type': 'xpath',
+        'operate_type': 'click',
+        'operate_message': '点击左上角【<】',
+        'input_character': ''
+    }
 }
