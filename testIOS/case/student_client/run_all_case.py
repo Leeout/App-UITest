@@ -8,8 +8,8 @@ from testIOS.case.student_client.test03_my_course import enter_my_course
 
 
 def run_all_case(driver):
-    logger.warning('测试开始......')
+    logger.warning('执行所有测试用例开始......')
     setup_page_student_login(driver)
     view_student_info(driver)
     enter_my_course(driver)
-    logger.warning('测试结束......')
+    logger.warning('执行所有测试用例结束......')

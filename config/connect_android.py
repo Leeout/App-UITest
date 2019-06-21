@@ -3,20 +3,30 @@ from selenium import webdriver
 
 from common.logger import logger
 from common.execute_command import execute_shell
-from config.test_device.android import android
 from config.command.android_adb import ADB
+
+
+def __get_device_id():
+    return execute_shell(ADB['device_id'])
+
+
+def __get_device_name():
+    return execute_shell(ADB['device_brand'])
+
+
+def __get_device_version():
+    return execute_shell(ADB['platform_version'])
 
 
 def setup_android_device():
     execute_shell(ADB['setup_adb'])
     desired_caps = dict()
-    for key in android:
-        device = android[key]
-        desired_caps['platformName'] = device['platformName']  # 设置平台       
-        desired_caps['platformVersion'] = device['platformVersion']  # 系统版本       
-        desired_caps['deviceName'] = device['deviceName']  # 设备id android机唯一标识   
-        desired_caps['appPackage'] = device['appPackage']  # app包名      
-        desired_caps['appActivity'] = device['appActivity']  # 启动的activity 
-        my_driver = webdriver.Remote(device['remoteUrl'], desired_caps)  # 接收指令的appium server端
-        logger.info('设备信息：%s', desired_caps)
-        return my_driver
+    desired_caps['appPackage'] = "com.dadaabc.zhuozan.dadaabcstudent"  # app包名      
+    desired_caps['appActivity'] = "com.dadaabc.zhuozan.dadaabcstudent.default"  # 启动的activity 
+    desired_caps['platformName'] = "Android"
+    desired_caps['deviceName'] = __get_device_name()
+    desired_caps['platformVersion'] = __get_device_version()
+    desired_caps['udid'] = __get_device_id()
+    my_driver = webdriver.Remote("http://192.168.132.232:4723/wd/hub", desired_caps)  # 接收指令的appium server端
+    logger.info('设备信息：%s', desired_caps)
+    return my_driver
