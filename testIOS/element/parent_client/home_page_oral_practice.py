@@ -1,6 +1,7 @@
 """
 ios家长端口语练习页面元素
 """
+
 home_page_oral_practice = {
     'oral_practice': {
         'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/'

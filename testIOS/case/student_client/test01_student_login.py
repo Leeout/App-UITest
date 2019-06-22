@@ -1,7 +1,6 @@
 """
 ios学生端 学生登录的用例
 """
-import time
 from common.logger import logger
 from common.operate_element import operate_element
 
@@ -14,6 +13,5 @@ def __case_collection(driver, platform):
 
 def setup_page_student_login(driver):
     logger.warning('测试开始......')
-    time.sleep(3)
     __case_collection(driver, 'iPad')
     logger.warning('测试结束......')

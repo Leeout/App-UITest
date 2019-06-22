@@ -2,6 +2,7 @@
 运行iPad测试的入口
 """
 import unittest
+
 from config.connect_ios import setup_ios_device
 
 from testIOS.case.student_client.run_all_case import run_all_case

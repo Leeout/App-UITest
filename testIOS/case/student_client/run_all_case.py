@@ -2,6 +2,7 @@
 ios学生端 所有的用例
 """
 from common.logger import logger
+
 from testIOS.case.student_client.test01_student_login import setup_page_student_login
 from testIOS.case.student_client.test02_student_info import view_student_info
 from testIOS.case.student_client.test03_my_course import enter_my_course

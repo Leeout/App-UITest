@@ -26,7 +26,7 @@ def handle_permission_popup(driver):
         logger.info('已关闭系统权限申请弹窗！')
 
     except Exception as error:
-        logger.info("handle permission popup exception: %s", error)
+        logger.error("handle permission popup exception: %s", error)
         return
 
 
@@ -126,7 +126,3 @@ def operate_element(driver, platform, **kwargs):
             driver.quit()
 
     return
-
-
-if __name__ == '__main__':
-    print(yaml)

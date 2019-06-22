@@ -1,6 +1,7 @@
 """
 ios家长端启动页的元素
 """
+
 start_page = {
     "click_debug_popup": {
         'position': '//XCUIElementTypeButton[@name="确定"]',

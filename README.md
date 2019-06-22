@@ -15,13 +15,12 @@
 
 >CHANGELOG.md             更新日志
 
->README.md                使用说明
-
 >run.sh 启动测试的脚本
 
 
 #### 2.appium server 环境安装
 在 docs > environment 详细说明
+
 
 #### 3.项目静态代码检查
 pylint abc-qa-app-UITest --rcfile=pylint.conf

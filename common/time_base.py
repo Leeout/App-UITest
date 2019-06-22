@@ -6,8 +6,7 @@ import datetime
 
 def get_current_time():
     """获取当前时间 年月日格式"""
-    current_time = datetime.datetime.now()
-    return str(current_time)
+    return str(datetime.datetime.now())
 
 
 if __name__ == '__main__':

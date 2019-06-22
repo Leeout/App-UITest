@@ -1,6 +1,7 @@
 """
 android家长端学生登录涉及的元素
 """
+
 login = {
     "startup_page_click_login": {
         "position": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/"

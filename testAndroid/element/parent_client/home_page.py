@@ -1,6 +1,5 @@
 """
 todo:android家长端学生登录后的主页tab元素(涉及4个tab)
-
 """
 
 home_page_element = {
