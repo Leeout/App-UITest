@@ -6,7 +6,7 @@ my_info = {
     "user_avatar": {
         'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementType'
-                    'Other[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]/XCUIElementTypeImage',
+                    'Other[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther',
         'find_type': 'xpath',
         'operate_type': 'click',
         'operate_message': '点击左上角用户头像',

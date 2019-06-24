@@ -10,20 +10,20 @@ my_course = {
         'operate_message': '点击【我的课程】',
         'input_character': ''
     },
-    "stage_learning_objectives": {
-        'position': '//XCUIElementTypeStaticText[@name="Unit 1: Take a New Step"]',
-        'find_type': 'xpath',
-        'operate_type': 'click',
-        'operate_message': '点击【阶段学习目标】观看视频',
-        'input_character': ''
-    },
-    "go_back1": {
-        'position': '//XCUIElementTypeButton[@name="common icon back"]',
-        'find_type': 'xpath',
-        'operate_type': 'click',
-        'operate_message': '返回上一级',
-        'input_character': ''
-    },
+    # "stage_learning_objectives": {
+    #     'position': '//XCUIElementTypeStaticText[@name="Unit 1: Take a New Step"]',
+    #     'find_type': 'xpath',
+    #     'operate_type': 'click',
+    #     'operate_message': '点击【阶段学习目标】观看视频',
+    #     'input_character': ''
+    # },
+    # "go_back1": {
+    #     'position': '//XCUIElementTypeButton[@name="common icon back"]',
+    #     'find_type': 'xpath',
+    #     'operate_type': 'click',
+    #     'operate_message': '返回上一级',
+    #     'input_character': ''
+    # },
     "previous_courses": {
         'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementType'

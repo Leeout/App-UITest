@@ -10,8 +10,8 @@ def __get_device_id():
     return execute_shell(IDEVICEINSTALLER['udid'])
 
 
-def __get_device_name():
-    return execute_shell(IDEVICEINSTALLER['device_name'] % __get_device_id())
+# def __get_device_name():
+#     return execute_shell(IDEVICEINSTALLER['device_name'] % __get_device_id())
 
 
 def __get_device_version():
@@ -38,10 +38,9 @@ def setup_ios_device():
     desired_caps['autoAcceptAlerts'] = 'true'  # appium点击关闭权限弹窗
     desired_caps['automationName'] = "XCUITest"
     desired_caps['platformName'] = "ios"
-    desired_caps['platformVersion'] = __get_device_version()
-    desired_caps['deviceName'] = __get_device_name()
+    desired_caps['deviceName'] = "ios"
     desired_caps['udid'] = __get_device_id()
     desired_caps['app'] = __get_bundle_id()
-    my_driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)  # 接收指令的appium server端
+    desired_caps['platformVersion'] = __get_device_version()
     logger.info('设备信息：%s', desired_caps)
-    return my_driver
+    return webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)  # 接收指令的appium server端

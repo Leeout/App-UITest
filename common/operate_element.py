@@ -12,7 +12,7 @@ path = get_file.dirname(get_file.realpath(__file__))
 yaml = get_file.join(path, "../report/screenshot/")
 
 
-def handle_permission_popup(driver):
+def __handle_popup(driver):
     """
     该方法用于处理系统弹窗，默认点击"同意"
     :param driver: 初始化设备信息 self.driver
@@ -30,7 +30,7 @@ def handle_permission_popup(driver):
         return
 
 
-def scroll_screen(driver, duration='right', number=2):
+def __scroll_screen(driver, duration='right', number=2):
     """
     todo:该方法用于滑屏操作
     :param driver: 初始化设备信息 self.driver
@@ -106,7 +106,7 @@ def operate_element(driver, platform, **kwargs):
                 logger.info('获取元素信息：%s', new_dic)
                 logger.debug('开始执行操作:%s', new_dic['operate_message'])
                 # 隐式等待，使用隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
-                driver.implicitly_wait(5)  # 设置5秒时间等待
+                driver.implicitly_wait(10)  # 设置10秒时间等待
 
                 element = __find_element(driver, platform, new_dic['find_type'], new_dic['position'])
 
@@ -121,8 +121,9 @@ def operate_element(driver, platform, **kwargs):
 
         except Exception as error:
             logger.error("operation exception %s", error)
-            driver.get_screenshot_as_file(yaml + platform + '/error_' + get_current_time() + '.png')
-            logger.warning('当前生成了一张错误截图！')
+            screenshot_path = yaml + platform + '/error_' + get_current_time() + '.png'
+            driver.get_screenshot_as_file(screenshot_path)
+            logger.warning('当前生成了一张错误截图！截图路径：%s', screenshot_path)
             driver.quit()
 
     return

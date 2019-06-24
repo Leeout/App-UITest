@@ -9,7 +9,7 @@ from testIOS.element.student_client.my_info import my_info
 
 
 def __case_collection(driver, platform):
-    operate_element(driver, platform, **login)
+    # operate_element(driver, platform, **login)
     operate_element(driver, platform, **my_info)
 
 
