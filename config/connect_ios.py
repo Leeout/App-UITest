@@ -42,5 +42,6 @@ def setup_ios_device():
     desired_caps['udid'] = __get_device_id()
     desired_caps['app'] = __get_bundle_id()
     desired_caps['platformVersion'] = __get_device_version()
+    test_device = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
     logger.info('设备信息：%s', desired_caps)
-    return webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)  # 接收指令的appium server端
+    return test_device  # 接收指令的appium server端

@@ -1,6 +1,6 @@
 """
 该文件是操作设备的一系列方法封装
-todo:1.滑屏  2.进webview
+todo:1.滑屏  2.webview内识别元素
 """
 import os
 
@@ -81,7 +81,7 @@ def __find_element(driver, platform, find_type, element_position):
         return element
 
     except Exception as error:
-        logger.error('find element fail:%s', error)
+        logger.error('find element fail %s', error)
         return
 
 
@@ -90,7 +90,7 @@ def operate_element(driver, platform, **kwargs):
     该方法封装了：识别元素、点击元素、发送字符 操作方法
     :param driver: 初始化设备信息 self.driver
     :param platform: 被测设备系统 android | ios 用以存放到不同的报告目录下
-    :param kwargs:
+    :param kwargs: 被测元素的嵌套字典集合
     kwargs['position']:element position
     kwargs['find_type']:find_type id or xpath
     kwargs['operate_type']:click
@@ -120,10 +120,10 @@ def operate_element(driver, platform, **kwargs):
                 logger.debug('执行%s操作完毕', new_dic['operate_message'])
 
         except Exception as error:
-            logger.error("operation exception %s", error)
-            screenshot_path = yaml + platform + '/error_' + get_current_time() + '.png'
-            driver.get_screenshot_as_file(screenshot_path)
-            logger.warning('当前生成了一张错误截图！截图路径：%s', screenshot_path)
+            logger.error("operate element:%s\nexplain:%s\nexception occurred %s", new_dic['position'],
+                         new_dic['operate_message'], error)
+            driver.get_screenshot_as_file( yaml + platform + '/error_' + get_current_time() + '.png')
+            logger.warning('当前生成了一张错误截图!')
             driver.quit()
 
     return

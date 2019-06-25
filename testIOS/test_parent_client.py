@@ -3,7 +3,6 @@
 """
 import os
 import unittest
-import HtmlTestRunner
 
 from common.time_base import get_current_time
 from config.connect_ios import setup_ios_device
@@ -30,12 +29,3 @@ class AppTests(unittest.TestCase):
 if __name__ == '__main__':
     suite = unittest.TestSuite()
     suite.addTest(AppTests("test_run_case"))
-
-    filename = yaml + 'App_UI自动化测试报告' + get_current_time() + '.html'
-    file = open(filename, 'wb')
-    runner = HtmlTestRunner.HTMLTestRunner(
-        output='test_report',
-        report_title='App_UI自动化测试报告',
-    )
-    runner.run(suite)
-    file.close()

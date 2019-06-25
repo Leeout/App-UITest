@@ -1,5 +1,5 @@
 """
-ios学生端 查看学生【我的课程】的用例
+ios学生端 【我的课程】的用例
 """
 from common.logger import logger
 from common.operate_element import operate_element

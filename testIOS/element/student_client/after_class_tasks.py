@@ -37,5 +37,12 @@ after_class_tasks = {
         'operate_type': 'click',
         'operate_message': '返回上一级',
         'input_character': ''
+    },
+    "go_back3": {
+        'position': '//XCUIElementTypeButton[@name="common icon back"]',
+        'find_type': 'xpath',
+        'operate_type': 'click',
+        'operate_message': '返回首页',
+        'input_character': ''
     }
 }

@@ -18,8 +18,6 @@ class AppTests(unittest.TestCase):
     def test_run_case(self):
         if self.driver:
             student_login(self.driver)  # 学生登录
-        else:
-            return
 
 
 if __name__ == '__main__':

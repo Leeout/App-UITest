@@ -10,7 +10,14 @@ audio_picture_book = {
         'operate_message': '点击【有声绘本】',
         'input_character': ''
     },
-    "go_back": {
+    "go_back1": {
+        'position': '//XCUIElementTypeButton[@name="common icon back"]',
+        'find_type': 'xpath',
+        'operate_type': 'click',
+        'operate_message': '返回上一级',
+        'input_character': ''
+    },
+    "go_back2": {
         'position': '//XCUIElementTypeButton[@name="common icon back"]',
         'find_type': 'xpath',
         'operate_type': 'click',
