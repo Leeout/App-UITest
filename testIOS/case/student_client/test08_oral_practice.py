@@ -15,5 +15,5 @@ def __case_collection(driver, platform):
 
 def enter_oral_practice(driver):
     logger.warning('测试开始......')
-    __case_collection(driver, 'iPad')
+    __case_collection(driver, 'ipad')
     logger.warning('测试结束......')

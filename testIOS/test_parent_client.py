@@ -11,7 +11,7 @@ from testIOS.case.parent_client.test1_student_login import setup_page_student_lo
 
 get_file = os.path
 path = get_file.dirname(get_file.realpath(__file__))
-yaml = get_file.join(path, "../report/screenshot/ios")
+yaml = get_file.join(path, "../report/error_screenshot/ios")
 
 
 class AppTests(unittest.TestCase):

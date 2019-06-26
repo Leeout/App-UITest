@@ -6,10 +6,11 @@ import os
 
 from common.logger import logger
 from common.time_base import get_current_time
+from common.operate_directory import operate_directory
 
 get_file = os.path
-path = get_file.dirname(get_file.realpath(__file__))
-yaml = get_file.join(path, "../report/screenshot/")
+path = get_file.dirname(get_file.realpath(__file__))  # 当前文件所在目录
+yaml = get_file.join(path, "../report/error_screenshot/")
 
 
 def __handle_popup(driver):
@@ -122,7 +123,8 @@ def operate_element(driver, platform, **kwargs):
         except Exception as error:
             logger.error("operate element:%s\nexplain:%s\nexception occurred %s", new_dic['position'],
                          new_dic['operate_message'], error)
-            driver.get_screenshot_as_file( yaml + platform + '/error_' + get_current_time() + '.png')
+            driver.get_screenshot_as_file(
+                operate_directory(yaml + platform + '/') + '/error_' + get_current_time() + '.png')
             logger.warning('当前生成了一张错误截图!')
             driver.quit()
 

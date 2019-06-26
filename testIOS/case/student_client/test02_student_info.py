@@ -15,5 +15,5 @@ def __case_collection(driver, platform):
 
 def view_student_info(driver):
     logger.warning('测试开始......')
-    __case_collection(driver, 'iPad')
+    __case_collection(driver, 'ipad')
     logger.warning('测试结束......')

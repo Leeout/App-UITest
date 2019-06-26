@@ -3,7 +3,13 @@ import sys
 import getopt
 
 from common.logger import logger
+from common.operate_directory import operate_directory
+
 import testIOS.test_student_client as student_client
+
+get_file = os.path
+path = get_file.dirname(get_file.realpath(__file__))  # 当前文件所在目录
+yaml = get_file.join(path, "../report/html_report/")
 
 
 def __usage():
@@ -26,7 +32,7 @@ def __run_case(value):
     :param value: 测试用例的集合名
     :return:
     """
-    file_path = 'report/html_report/'
+    file_path = operate_directory(yaml + value)
     if value == 'ipad':
         student_client.run_suite(file_path)
 
