@@ -33,6 +33,13 @@ my_course = {
         'operate_message': '点击【往期课程】',
         'input_character': ''
     },
+    "swip_left": {
+        'position': '',
+        'find_type': '',
+        'operate_type': 'swip',
+        'operate_message': '向左滑动页面',
+        'input_character': ''
+    },
     "cancelled": {
         'position': '//XCUIElementTypeButton[@name="已取消"]',
         'find_type': 'xpath',

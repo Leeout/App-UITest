@@ -17,7 +17,7 @@ def operate_directory(directory, command="mkdir"):
     :param command: 执行的命令
     :return: 返回执行命令获取的结果
     """
-    complete_directory = directory + get_today_date()
+    complete_directory = directory + get_today_date() + '/'
     if os.path.exists(complete_directory) and command == "mkdir":
         return complete_directory
     else:

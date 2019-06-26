@@ -7,10 +7,6 @@ from common.operate_directory import operate_directory
 
 import testIOS.test_student_client as student_client
 
-get_file = os.path
-path = get_file.dirname(get_file.realpath(__file__))  # 当前文件所在目录
-yaml = get_file.join(path, "../report/html_report/")
-
 
 def __usage():
     """命令行使用帮助"""
@@ -32,7 +28,7 @@ def __run_case(value):
     :param value: 测试用例的集合名
     :return:
     """
-    file_path = operate_directory(yaml + value)
+    file_path = operate_directory('report/html_report/' + value + '/')
     if value == 'ipad':
         student_client.run_suite(file_path)
 
@@ -60,12 +56,11 @@ def __handle(opts):
 def main():
     """Main Function"""
     cmd_params = sys.argv[1:]
-    logger.warning('cmd_params:%s', cmd_params)
+    logger.warning('脚本入参为:%s', cmd_params)
 
     try:
         opts, args = getopt.gnu_getopt(cmd_params, 'hr:', ['help', 'run='])
-        logger.warning('opts:%s', opts)
-        logger.warning('args:%s', args)
+        logger.warning('有效命令为:%s', opts)
         __handle(opts)
 
     except Exception as err:

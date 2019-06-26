@@ -10,6 +10,13 @@ def get_current_time():
     return time.strftime("%Y-%m-%d %H:%M:%S")
 
 
+def get_current_hour_minute():
+    """获取当前时间，格式为时分，例如 19:36"""
+    now_time = datetime.datetime.now()
+    current_hour_minute = str(now_time.hour) + ':' + str(now_time.minute)
+    return current_hour_minute
+
+
 def get_today_date():
     """获取今天日期 年-月-日 格式"""
     return str(datetime.date.today())
@@ -17,4 +24,4 @@ def get_today_date():
 
 if __name__ == '__main__':
     # get_today_date()
-    get_current_time()
+    get_current_hour_minute()

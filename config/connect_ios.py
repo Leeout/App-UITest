@@ -1,5 +1,6 @@
 """组装设备信息"""
 from selenium import webdriver
+from appium import webdriver
 
 from common.logger import logger
 from common.execute_command import execute_shell

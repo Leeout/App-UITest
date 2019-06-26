@@ -58,15 +58,15 @@ class AppTests(unittest.TestCase):
 
 def __add_suite():
     suite = unittest.TestSuite()
-    suite.addTest(AppTests("test01_student_login"))
-    suite.addTest(AppTests("test02_student_info"))
+    # suite.addTest(AppTests("test01_student_login"))
+    # suite.addTest(AppTests("test02_student_info"))
     suite.addTest(AppTests("test03_enter_my_course"))
-    suite.addTest(AppTests("test04_enter_teacher_live_broadcast"))
-    suite.addTest(AppTests("test05_enter_open_class"))
-    suite.addTest(AppTests("test06_enter_after_class_tasks"))
-    suite.addTest(AppTests("test07_enter_audio_picture_book"))
-    suite.addTest(AppTests("test08_enter_oral_practice"))
-    suite.addTest(AppTests("test09_enter_baibao_box"))
+    # suite.addTest(AppTests("test04_enter_teacher_live_broadcast"))
+    # suite.addTest(AppTests("test05_enter_open_class"))
+    # suite.addTest(AppTests("test06_enter_after_class_tasks"))
+    # suite.addTest(AppTests("test07_enter_audio_picture_book"))
+    # suite.addTest(AppTests("test08_enter_oral_practice"))
+    # suite.addTest(AppTests("test09_enter_baibao_box"))
     return suite
 
 

@@ -5,7 +5,7 @@ todo:1.滑屏  2.webview内识别元素
 import os
 
 from common.logger import logger
-from common.time_base import get_current_time
+from common.time_base import get_current_hour_minute
 from common.operate_directory import operate_directory
 
 get_file = os.path
@@ -31,33 +31,32 @@ def __handle_popup(driver):
         return
 
 
-def __scroll_screen(driver, duration='right', number=2):
+def __scroll_screen(driver, duration):
     """
-    todo:该方法用于滑屏操作
     :param driver: 初始化设备信息 self.driver
-    :param duration: 滑动持续时长
-    :param number: 滚动的次数 默认滑动 次
+    :param duration: 滑动屏幕的时间
+    :return:
     """
     try:
-        logger.info('开始滑动屏幕......')
+        # logger.info('开始滑动屏幕......')
         # 滑屏第一种方法：
         # TouchAction(driver).press(x=1, y=395).move_to(x=5, y=419).release().perform()
 
         # 滑屏第二种方法：
-        for i in range(number):
-            driver.execute_script("mobile: swipe", {"direction": duration})
-            logger.info('已滑动屏幕：%s', i + 1)
-        return
+        # for i in range(number):
+        #     driver.execute_script("mobile: swipe", {"direction": direction})
+        #     logger.info('已滑动屏幕：%s', i + 1)
+        # return
 
         # 滑屏第三种方法：
-        # size = driver.get_window_size()
-        # logger.debug('设备尺寸：%s', size)
-        # x1 = int(size['width'] * 0.75)
-        # y1 = int(size['height'] * 0.5)
-        # x2 = int(size['width'] * 0.25)
+        size = driver.get_window_size()
+        logger.debug('设备尺寸：%s', size)
+        x1 = int(size['width'] * 0.75)
+        y1 = int(size['height'] * 0.5)
+        x2 = int(size['width'] * 0.25)
         # for i in range(number):
-        #     driver.swipe(x1, y1, x2, y1, duration)
-        #     logger.info('已滑动屏幕：%s次', i + 1)
+        driver.swipe(x1, y1, x2, y1, duration)
+        logger.info('已滑动屏幕 1次')
 
     except Exception as error:
         logger.error("scroll screen exception: %s", error)
@@ -68,7 +67,8 @@ def __find_element(driver, platform, find_type, element_position):
     """
     该方法用于识别元素
     :param driver: 初始化设备信息 self.driver
-    :param find_type: 获取元素方式
+    :param platform: 被测设备系统 android | ios
+    :param find_type: 发现元素方式
     :param element_position: 元素位置
     :return: element 找到的元素
     """
@@ -84,6 +84,15 @@ def __find_element(driver, platform, find_type, element_position):
     except Exception as error:
         logger.error('find element fail %s', error)
         return
+
+
+def __error_screenshot(driver, screenshot_path):
+    """
+    :param driver: 初始化设备信息 self.driver
+    :param screenshot_path: 截图存放的位置
+    :return:
+    """
+    return driver.get_screenshot_as_file(screenshot_path)
 
 
 def operate_element(driver, platform, **kwargs):
@@ -108,23 +117,25 @@ def operate_element(driver, platform, **kwargs):
                 logger.debug('开始执行操作:%s', new_dic['operate_message'])
                 # 隐式等待，使用隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
                 driver.implicitly_wait(10)  # 设置10秒时间等待
+                if 'swip' in new_dic['operate_type']:
+                    __scroll_screen(driver, 1000)
+                else:
+                    element = __find_element(driver, platform, new_dic['find_type'], new_dic['position'])
 
-                element = __find_element(driver, platform, new_dic['find_type'], new_dic['position'])
+                    if 'click' in new_dic['operate_type']:
+                        element.click()
+                        logger.debug('点击了元素：%s', new_dic['position'])
 
-                if 'click' in new_dic['operate_type']:
-                    element.click()
-                    logger.debug('点击了元素：%s', new_dic['position'])
-
-                if new_dic['input_character'] != "":
-                    element.send_keys(new_dic['input_character'])
-                    logger.debug('输入了字符：%s', new_dic['input_character'])
+                    if new_dic['input_character'] != "":
+                        element.send_keys(new_dic['input_character'])
+                        logger.debug('输入了字符：%s', new_dic['input_character'])
                 logger.debug('执行%s操作完毕', new_dic['operate_message'])
 
         except Exception as error:
-            logger.error("operate element:%s\nexplain:%s\nexception occurred %s", new_dic['position'],
+            logger.error("operate element:%s \nexplain:%s \nexception occurred %s", new_dic['position'],
                          new_dic['operate_message'], error)
-            driver.get_screenshot_as_file(
-                operate_directory(yaml + platform + '/') + '/error_' + get_current_time() + '.png')
+            __error_screenshot(driver, operate_directory(
+                yaml + platform + '/') + '/error_' + get_current_hour_minute() + '.png')
             logger.warning('当前生成了一张错误截图!')
             driver.quit()
 
