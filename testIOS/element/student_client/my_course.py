@@ -33,7 +33,7 @@ my_course = {
         'operate_message': '点击【往期课程】',
         'input_character': ''
     },
-    "swip_left": {
+    "swip_left1": {
         'position': '',
         'find_type': '',
         'operate_type': 'swip',
@@ -45,6 +45,13 @@ my_course = {
         'find_type': 'xpath',
         'operate_type': 'click',
         'operate_message': '点击【已取消】',
+        'input_character': ''
+    },
+    "swip_left2": {
+        'position': '',
+        'find_type': '',
+        'operate_type': 'swip',
+        'operate_message': '向左滑动页面',
         'input_character': ''
     },
     "go_back2": {

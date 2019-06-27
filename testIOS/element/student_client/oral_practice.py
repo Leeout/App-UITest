@@ -10,6 +10,13 @@ oral_practice = {
         'operate_message': '点击【口语练习】',
         'input_character': ''
     },
+    "swip_left1": {
+        'position': '',
+        'find_type': '',
+        'operate_type': 'swip',
+        'operate_message': '向左滑动页面',
+        'input_character': ''
+    },
     "ranking_list": {
         'position': '//XCUIElementTypeStaticText[@name="排行榜"]',
         'find_type': 'xpath',
@@ -38,6 +45,13 @@ oral_practice = {
         'operate_message': '点击【练习记录】',
         'input_character': ''
     },
+    "swip_left2": {
+        'position': '',
+        'find_type': '',
+        'operate_type': 'swip',
+        'operate_message': '向左滑动页面',
+        'input_character': ''
+    },
     "go_back2": {
         'position': '//XCUIElementTypeButton[@name="common icon back"]',
         'find_type': 'xpath',
@@ -50,6 +64,13 @@ oral_practice = {
         'find_type': 'xpath',
         'operate_type': 'click',
         'operate_message': '点击【所有教材】',
+        'input_character': ''
+    },
+    "swip_left3": {
+        'position': '',
+        'find_type': '',
+        'operate_type': 'swip',
+        'operate_message': '向左滑动页面',
         'input_character': ''
     },
     "go_back3": {

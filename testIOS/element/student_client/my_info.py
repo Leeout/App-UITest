@@ -36,6 +36,13 @@ my_info = {
         'operate_message': '点击【勋章墙】',
         'input_character': ''
     },
+    "swip_left": {
+        'position': '',
+        'find_type': '',
+        'operate_type': 'swip',
+        'operate_message': '向左滑动页面',
+        'input_character': ''
+    },
     "go_back1": {
         'position': '//XCUIElementTypeButton[@name="common icon back"]',
         'find_type': 'xpath',

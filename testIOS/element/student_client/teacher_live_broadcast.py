@@ -12,6 +12,13 @@ teacher_live_broadcast = {
         'operate_message': '点击【外教直播】',
         'input_character': ''
     },
+    "swip_left1": {
+        'position': '',
+        'find_type': '',
+        'operate_type': 'swip',
+        'operate_message': '向左滑动页面',
+        'input_character': ''
+    },
     "previous_live_broadcasts": {
         'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElement'
@@ -19,6 +26,13 @@ teacher_live_broadcast = {
         'find_type': 'xpath',
         'operate_type': 'click',
         'operate_message': '点击【往期直播】',
+        'input_character': ''
+    },
+    "swip_left2": {
+        'position': '',
+        'find_type': '',
+        'operate_type': 'swip',
+        'operate_message': '向左滑动页面',
         'input_character': ''
     },
     "go_back1": {

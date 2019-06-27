@@ -11,10 +11,9 @@ def get_current_time():
 
 
 def get_current_hour_minute():
-    """获取当前时间，格式为时分，例如 19:36"""
+    """获取当前时间，格式为时分，如 19:36"""
     now_time = datetime.datetime.now()
-    current_hour_minute = str(now_time.hour) + ':' + str(now_time.minute)
-    return current_hour_minute
+    return str(now_time.hour) + ':' + str(now_time.minute)
 
 
 def get_today_date():
@@ -23,5 +22,4 @@ def get_today_date():
 
 
 if __name__ == '__main__':
-    # get_today_date()
     get_current_hour_minute()
