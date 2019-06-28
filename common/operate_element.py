@@ -35,6 +35,7 @@ def __handle_popup(driver):
 
 def __scroll_screen(driver, number=4, direction="left"):
     """
+    该方法用于滑动屏幕
     :param driver: 初始化设备信息 self.driver
     :param number: 滑屏的次数 默认是4次
     :param direction: 滑动屏幕的方法 默认是往左滑动
@@ -83,12 +84,13 @@ def __find_element(driver, platform, find_type, element_position):
         return element
 
     except Exception as error:
-        logger.error('find element fail %s', error)
+        logger.error('find element fail: %s', error)
         return
 
 
 def __click_element(element):
     """
+    该方法用于点击元素
     :param element: 找到的元素
     """
     element.click()
@@ -96,24 +98,55 @@ def __click_element(element):
 
 def __input_character(element, character):
     """
+    该方法用于在输入框内输入字符
     :param element: 找到的元素
-    :param character:  输入的字符
+    :param character: 输入的字符
     """
     element.send_keys(character)
 
 
 def __error_screenshot(driver, screenshot_path):
     """
+    该方法用于抛异常时截取屏幕
     :param driver: 初始化设备信息 self.driver
-    :param screenshot_path: 截图存放的位置
     """
     driver.get_screenshot_as_file(screenshot_path)
     logger.warning('当前生成了一张错误截图!')
 
 
-def operate_element(driver, platform, **kwargs):
+def __into_webview(driver):
     """
-    该方法封装了：识别元素、点击元素、发送字符 操作方法
+    该方法用于进入webview
+    :param driver: 初始化设备信息 self.driver
+    """
+    try:
+        contexts = driver.contexts
+        driver.switch_to.context(contexts[1])  # contexts[1]:webview || contexts[0]:native
+        if "WEBVIEW_" in driver.current_context:
+            return True
+    except Exception as error:
+        logger.error("into webview fail: %s", error)
+        return False
+
+
+def __quit_webview(driver):
+    """
+    该方法用于退出webview
+    :param driver: 初始化设备信息 self.driver
+    """
+    try:
+        contexts = driver.contexts
+        driver.switch_to.context(contexts[0])  # contexts[1]:webview || contexts[0]:native
+        if "NATIVE_APP" in driver.current_context:
+            return True
+    except Exception as error:
+        logger.error("quit webview fail: %s", error)
+        return False
+
+
+def main_operate(driver, platform, **kwargs):
+    """
+    该方法是测试用例执行时运行的主函数
     :param driver: 初始化设备信息 self.driver
     :param platform: 被测设备系统 android | ios 用以存放到不同的报告目录下
     :param kwargs: 被测元素的嵌套字典集合
@@ -150,7 +183,7 @@ def operate_element(driver, platform, **kwargs):
             logger.error("operate element:%s \nexplain:%s \nexception occurred %s", new_dic['position'],
                          new_dic['operate_message'], error)
             __error_screenshot(driver, operate_directory(
-                yaml + platform + '/') + '/error_' + get_current_hour_minute() + '.png')
+                yaml + platform + '/') + '/' + get_current_hour_minute() + '_error.png')
             driver.quit()
 
     return

@@ -2,7 +2,7 @@
 ios学生端 【课后任务】的用例
 """
 from common.logger import logger
-from common.operate_element import operate_element
+from common.operate_element import main_operate
 
 from testIOS.element.student_client.login import login
 from testIOS.element.student_client.after_class_tasks import after_class_tasks
@@ -10,7 +10,7 @@ from testIOS.element.student_client.after_class_tasks import after_class_tasks
 
 def __case_collection(driver, platform):
     # operate_element(driver, platform, **login)
-    operate_element(driver, platform, **after_class_tasks)
+    main_operate(driver, platform, **after_class_tasks)
 
 
 def enter_after_class_tasks(driver):

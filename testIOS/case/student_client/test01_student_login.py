@@ -2,13 +2,13 @@
 ios学生端 登录的用例
 """
 from common.logger import logger
-from common.operate_element import operate_element
+from common.operate_element import main_operate
 
 from testIOS.element.student_client.login import login
 
 
 def __case_collection(driver, platform):
-    operate_element(driver, platform, **login)
+    main_operate(driver, platform, **login)
 
 
 def setup_page_student_login(driver):
