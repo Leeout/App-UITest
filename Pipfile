@@ -4,9 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+nose = "*"
 colorlog = "*"
 selenium = "*"
-nose = "*"
 appium-python-client = "*"
 
 [dev-packages]

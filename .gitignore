@@ -101,7 +101,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-*.png
+
 .idea/
 ~*
 *__pycache__*
@@ -110,6 +110,5 @@ venv.bak/
 .vscode/*
 .DS_Store
 *$*.xlsx
-*_test_report.html
 /pylint_report.txt
 
