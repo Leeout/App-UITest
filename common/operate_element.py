@@ -12,7 +12,7 @@ from common.operate_directory import operate_directory
 
 get_file = os.path
 path = get_file.dirname(get_file.realpath(__file__))  # 当前文件所在目录
-yaml = get_file.join(path, "../report/error_screenshot/")
+yaml = get_file.join(path, "../report/")
 
 
 def __handle_popup(driver):
@@ -188,7 +188,7 @@ def main_operate(driver, platform, **kwargs):
             logger.error("operate element:%s \nexplain:%s \nexception occurred %s", new_dic['position'],
                          new_dic['operate_message'], error)
             __error_screenshot(driver, operate_directory(
-                yaml + platform + '/') + '/' + get_current_hour_minute() + '_error.png')
+                yaml + platform + '/error_screenshot/') + '/' + get_current_hour_minute() + '_error.png')
             driver.quit()
 
     return

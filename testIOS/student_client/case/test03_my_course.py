@@ -1,17 +1,18 @@
 """
-ios学生端 登录的用例
+ios学生端 【我的课程】的用例
 """
 from common.logger import logger
 from common.operate_element import main_operate
 
-from testIOS.element.student_client.login import login
+from student_client.element.my_course import my_course
 
 
 def __case_collection(driver, platform):
-    main_operate(driver, platform, **login)
+    # operate_element(driver, platform, **login)
+    main_operate(driver, platform, **my_course)
 
 
-def setup_page_student_login(driver):
+def enter_my_course(driver):
     logger.warning('测试开始......')
     __case_collection(driver, 'ipad')
     logger.warning('测试结束......')

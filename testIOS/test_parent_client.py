@@ -4,10 +4,9 @@
 import os
 import unittest
 
-from common.time_base import get_current_time
 from config.connect_ios import setup_ios_device
 
-from testIOS.case.parent_client.test1_student_login import setup_page_student_login
+from parent_client.case.test1_student_login import setup_page_student_login
 
 get_file = os.path
 path = get_file.dirname(get_file.realpath(__file__))

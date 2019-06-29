@@ -1,10 +1,10 @@
 """
-ios家长端 学生登录的用例
+ios学生端 登录的用例
 """
 from common.logger import logger
 from common.operate_element import main_operate
 
-from testIOS.element.parent_client.login import login
+from student_client.element.login import login
 
 
 def __case_collection(driver, platform):
@@ -13,5 +13,5 @@ def __case_collection(driver, platform):
 
 def setup_page_student_login(driver):
     logger.warning('测试开始......')
-    __case_collection(driver, 'ios')
+    __case_collection(driver, 'ipad')
     logger.warning('测试结束......')

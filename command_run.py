@@ -28,7 +28,7 @@ def __run_case(value):
     :param value: 测试用例的集合名
     :return:
     """
-    file_path = operate_directory('report/html_report/' + value + '/')
+    file_path = operate_directory('report/' + value + '/html_report/')
     if value == 'ipad':
         student_client.run_suite(file_path)
 

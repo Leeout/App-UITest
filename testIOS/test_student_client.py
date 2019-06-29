@@ -7,15 +7,15 @@ from common import HTMLTestRunner
 from common import output_report
 from config.connect_ios import setup_ios_device
 
-from testIOS.case.student_client.test01_student_login import setup_page_student_login
-from testIOS.case.student_client.test02_student_info import view_student_info
-from testIOS.case.student_client.test03_my_course import enter_my_course
-from testIOS.case.student_client.test04_teacher_live_broadcast import enter_teacher_live_broadcast
-from testIOS.case.student_client.test05_open_class import enter_open_class
-from testIOS.case.student_client.test06_after_class_tasks import enter_after_class_tasks
-from testIOS.case.student_client.test07_audio_picture_book import enter_audio_picture_book
-from testIOS.case.student_client.test08_oral_practice import enter_oral_practice
-from testIOS.case.student_client.test09_baibao_box import enter_baibao_box
+from student_client.case.test01_student_login import setup_page_student_login
+from student_client.case.test02_student_info import view_student_info
+from student_client.case.test03_my_course import enter_my_course
+from student_client.case.test04_teacher_live_broadcast import enter_teacher_live_broadcast
+from student_client.case.test05_open_class import enter_open_class
+from student_client.case.test06_after_class_tasks import enter_after_class_tasks
+from student_client.case.test07_audio_picture_book import enter_audio_picture_book
+from student_client.case.test08_oral_practice import enter_oral_practice
+from student_client.case.test09_baibao_box import enter_baibao_box
 
 
 class AppTests(unittest.TestCase):
