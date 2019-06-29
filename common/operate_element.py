@@ -144,6 +144,14 @@ def __quit_webview(driver):
         return False
 
 
+def __control_execute(key, driver, element):
+    switch_case = {
+        "swip": __scroll_screen(driver),
+        "click": __click_element(element)
+    }
+    switch_case.get(key['operate_type'])
+
+
 def main_operate(driver, platform, **kwargs):
     """
     该方法是测试用例执行时运行的主函数
@@ -162,21 +170,18 @@ def main_operate(driver, platform, **kwargs):
         try:
             logger.info('获取元素信息：%s', new_dic)
             logger.debug('开始执行操作:%s', new_dic['operate_message'])
-            # 隐式等待，使用隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
-            driver.implicitly_wait(10)  # 设置10秒时间等待
 
-            if 'swip' in new_dic['operate_type']:
-                __scroll_screen(driver)
-            else:
-                element = __find_element(driver, platform, new_dic['find_type'], new_dic['position'])
+            # 隐式等待(10秒)，使用隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
+            driver.implicitly_wait(10)
 
-                if 'click' in new_dic['operate_type']:
-                    __click_element(element)
-                    logger.debug('点击了元素：%s', new_dic['position'])
+            element = __find_element(driver, platform, new_dic['find_type'], new_dic['position'])
 
-                if new_dic['input_character'] != "":
-                    __input_character(element, new_dic['input_character'])
-                    logger.debug('输入了字符：%s', new_dic['input_character'])
+            __control_execute(new_dic, driver, element)
+
+            if new_dic['input_character'] != "":
+                __input_character(element, new_dic['input_character'])
+                logger.debug('输入了字符：%s', new_dic['input_character'])
+
             logger.debug('执行%s操作完毕', new_dic['operate_message'])
 
         except Exception as error:
