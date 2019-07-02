@@ -4,7 +4,7 @@ ios学生端 登录的用例
 from common.logger import logger
 from common.operate_element import main_operate
 
-from student_client.element.login import login
+from testIOS.student_client.element.login import login
 
 
 def __case_collection(driver, platform):

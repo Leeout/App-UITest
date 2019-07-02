@@ -4,7 +4,7 @@ ios学生端 【百宝箱】的用例
 from common.logger import logger
 from common.operate_element import main_operate
 
-from student_client.element.baibao_box import baibao_box
+from testIOS.student_client.element.baibao_box import baibao_box
 
 
 def __case_collection(driver, platform):

@@ -4,7 +4,7 @@ android家长端学生登录的用例
 from common.logger import logger
 from common.operate_element import main_operate
 
-from parent_client.element.login import login
+from testAndroid.parent_client.element.login import login
 
 
 def __case_collection(driver, platform):

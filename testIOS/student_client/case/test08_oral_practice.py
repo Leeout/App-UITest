@@ -4,7 +4,7 @@ ios学生端 【口语练习】的用例
 from common.logger import logger
 from common.operate_element import main_operate
 
-from student_client.element.oral_practice import oral_practice
+from testIOS.student_client.element.oral_practice import oral_practice
 
 
 def __case_collection(driver, platform):

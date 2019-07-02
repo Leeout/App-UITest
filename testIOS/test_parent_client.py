@@ -6,7 +6,7 @@ import unittest
 
 from config.connect_ios import setup_ios_device
 
-from parent_client.case.test01_student_login import setup_page_student_login
+from testIOS.parent_client.case.test01_student_login import setup_page_student_login
 
 get_file = os.path
 path = get_file.dirname(get_file.realpath(__file__))

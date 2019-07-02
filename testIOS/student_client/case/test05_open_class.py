@@ -4,7 +4,7 @@ ios学生端 【公开课】的用例
 from common.logger import logger
 from common.operate_element import main_operate
 
-from student_client.element.open_class import open_class
+from testIOS.student_client.element.open_class import open_class
 
 
 def __case_collection(driver, platform):

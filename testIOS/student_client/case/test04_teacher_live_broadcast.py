@@ -4,7 +4,7 @@ ios学生端 【外教直播课】的用例
 from common.logger import logger
 from common.operate_element import main_operate
 
-from student_client.element.teacher_live_broadcast import teacher_live_broadcast
+from testIOS.student_client.element.teacher_live_broadcast import teacher_live_broadcast
 
 
 def __case_collection(driver, platform):

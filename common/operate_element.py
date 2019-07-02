@@ -152,6 +152,34 @@ def __control_execute(key, driver, element):
     switch_case.get(key['operate_type'])
 
 
+def failed_retry(s, t, number):
+    """
+    :param s: 失败重试运行setup方法
+    :param t: 失败重试运行tearDown方法
+    :param number: 重试次数
+    :return
+    """
+
+    def decorator(function):
+        def wrapper(*a, **w):
+            for i in range(number):
+                try:
+                    logger.debug('-------------------\n retry num:', i)
+                    result = function(*a, **w)
+                    logger.debug('success \n-------------------')
+                    return result
+
+                except Exception as error:
+                    logger.error('retry exception:%s', error)
+                    t(*a)
+                    s(*a)
+                raise Exception
+
+        return wrapper
+
+    return decorator
+
+
 def main_operate(driver, platform, **kwargs):
     """
     该方法是测试用例执行时运行的主函数
