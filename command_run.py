@@ -16,7 +16,7 @@ Args:
     -h, --help                 显示帮助
     
     -r, --run=                 运行测试, 可选值
-                            -- ipad             iOS学生端测试用例
+                            -- ipad             ios学生端测试用例
                             -- ios              ios家长端测试用例
                             -- android          android家长端测试用例
     """

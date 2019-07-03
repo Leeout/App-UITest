@@ -94,6 +94,7 @@ def __click_element(element):
     :param element: 找到的元素
     """
     element.click()
+    return
 
 
 def __input_character(element, character):
@@ -103,6 +104,7 @@ def __input_character(element, character):
     :param character: 输入的字符
     """
     element.send_keys(character)
+    return
 
 
 def __error_screenshot(driver, screenshot_path):
@@ -149,7 +151,7 @@ def __control_execute(key, driver, element):
         "swip": __scroll_screen(driver),
         "click": __click_element(element)
     }
-    switch_case.get(key['operate_type'])
+    switch_case.get(key)
 
 
 def failed_retry(s, t, number):
@@ -193,28 +195,28 @@ def main_operate(driver, platform, **kwargs):
     kwargs['input_character']:input character
     """
     for key in kwargs:
-        new_dic = kwargs[key]
+        element_dictionary = kwargs[key]
 
         try:
-            logger.info('获取元素信息：%s', new_dic)
-            logger.debug('开始执行操作:%s', new_dic['operate_message'])
+            logger.info('获取元素信息：%s', element_dictionary)
+            logger.debug('开始执行操作:%s', element_dictionary['operate_message'])
 
             # 隐式等待(10秒)，使用隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
             driver.implicitly_wait(10)
 
-            element = __find_element(driver, platform, new_dic['find_type'], new_dic['position'])
+            element = __find_element(driver, platform, element_dictionary['find_type'], element_dictionary['position'])
 
-            __control_execute(new_dic, driver, element)
+            __control_execute(element_dictionary['operate_type'], driver, element)
 
-            if new_dic['input_character'] != "":
-                __input_character(element, new_dic['input_character'])
-                logger.debug('输入了字符：%s', new_dic['input_character'])
+            if element_dictionary['input_character'] != "":
+                __input_character(element, element_dictionary['input_character'])
+                logger.debug('输入了字符：%s', element_dictionary['input_character'])
 
-            logger.debug('执行%s操作完毕', new_dic['operate_message'])
+            logger.debug('执行%s操作完毕', element_dictionary['operate_message'])
 
         except Exception as error:
-            logger.error("operate element:%s \nexplain:%s \nexception occurred %s", new_dic['position'],
-                         new_dic['operate_message'], error)
+            logger.error("operate element:%s \nexplain:%s \nexception occurred %s", element_dictionary['position'],
+                         element_dictionary['operate_message'], error)
             __error_screenshot(driver, operate_directory(
                 yaml + platform + '/error_screenshot/') + '/' + get_current_hour_minute() + '_error.png')
             driver.quit()
