@@ -4,9 +4,7 @@ ios学生端主页-外教直播 元素
 
 teacher_live_broadcast = {
     "entrance": {
-        'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
-                    'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementType'
-                    'Other[3]/XCUIElementTypeOther/XCUIElementTypeImage',
+        'position': '//XCUIElementTypeStaticText[@name="外教直播"]',
         'find_type': 'xpath',
         'operate_type': 'click',
         'operate_message': '点击【外教直播】',

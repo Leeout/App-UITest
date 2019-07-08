@@ -131,6 +131,10 @@ def __operate_webview(driver, is_switch):
         return False
 
 
+def __control_execution(driver, dict):
+    return __scroll_screen(driver) if dict['operate_type'] == 'swip' else __operate_webview(driver, dict['position'])
+
+
 def failed_retry(s, t, number):
     """
     该方法用于用例运行出错后重试
@@ -181,12 +185,8 @@ def main_operate(driver, platform, **kwargs):
             # 隐式等待(15秒)，隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
             driver.implicitly_wait(20)
 
-            if 'swip' in element_dictionary['operate_type']:
-                __scroll_screen(driver)
-                continue
-
-            if 'webview' in element_dictionary['operate_type']:
-                __operate_webview(driver, element_dictionary['position'])
+            if element_dictionary['operate_type'] in ('swip', 'webview'):
+                __control_execution(driver, element_dictionary)
                 continue
 
             element = __find_element(driver, platform, element_dictionary['find_type'], element_dictionary['position'])
