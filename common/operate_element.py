@@ -1,7 +1,7 @@
 """
 该文件是操作设备的一系列方法封装
 todo:
-1.webview内识别元素
+1.webview内识别元素 --已完成 存在小问题 要看下
 2.断言
 """
 import os
@@ -21,12 +21,12 @@ def __handle_popup(driver):
     :param driver: 初始化设备信息 self.driver
     """
     try:
-        logger.info('正在尝试关闭系统权限申请弹窗......')
+        logger.warning('正在尝试关闭系统权限申请弹窗......')
         while True:
             # if "不允许" in driver.page_source or "Don't Allow" in driver.page_source:
             driver.switch_to.alert.accept()
+            logger.debug('已关闭系统权限申请弹窗！')
             break
-        logger.info('已关闭系统权限申请弹窗！')
 
     except Exception as error:
         logger.error("handle permission popup exception: %s", error)
@@ -41,7 +41,6 @@ def __scroll_screen(driver, number=4, direction="left"):
     :param direction: 滑动屏幕的方法 默认是往左滑动
     """
     try:
-
         # 滑屏第一种方法：对ios机器有效，android未尝试
         for i in range(number):
             logger.debug('开始滑动屏幕......')
@@ -50,6 +49,7 @@ def __scroll_screen(driver, number=4, direction="left"):
 
         # 滑屏第二种方法：
         # TouchAction(driver).press(x=1, y=395).move_to(x=5, y=419).release().perform()
+
         # 滑屏第三种方法：(对ios机器无效 会报错)
         # size = driver.get_window_size()
         # logger.debug('设备尺寸：%s', size)
@@ -59,7 +59,6 @@ def __scroll_screen(driver, number=4, direction="left"):
         # # for i in range(number):
         # driver.swipe(x1, y1, x2, y1, duration)
         # logger.info('已滑动屏幕 1次')
-
     except Exception as error:
         logger.error("scroll screen exception: %s", error)
         return
@@ -93,8 +92,7 @@ def __click_element(element):
     该方法用于点击元素
     :param element: 找到的元素
     """
-    element.click()
-    return
+    return element.click()
 
 
 def __input_character(element, character):
@@ -103,8 +101,7 @@ def __input_character(element, character):
     :param element: 找到的元素
     :param character: 输入的字符
     """
-    element.send_keys(character)
-    return
+    return element.send_keys(character)
 
 
 def __error_screenshot(driver, screenshot_path):
@@ -114,48 +111,29 @@ def __error_screenshot(driver, screenshot_path):
     """
     driver.get_screenshot_as_file(screenshot_path)
     logger.warning('当前生成了一张错误截图!')
+    return
 
 
-def __into_webview(driver):
+def __operate_webview(driver, is_switch):
     """
     该方法用于进入webview
     :param driver: 初始化设备信息 self.driver
+    :param is_switch: 控制切换webview、native 1:webview || 0:native
     """
     try:
         contexts = driver.contexts
-        driver.switch_to.context(contexts[1])  # contexts[1]:webview || contexts[0]:native
-        if "WEBVIEW_" in driver.current_context:
-            return True
+        driver.switch_to.context(contexts[is_switch])
+        logger.debug('当前所处:%s'), driver.current_context
+        return True
+
     except Exception as error:
-        logger.error("into webview fail: %s", error)
+        logger.error("operate webview fail: %s", error)
         return False
-
-
-def __quit_webview(driver):
-    """
-    该方法用于退出webview
-    :param driver: 初始化设备信息 self.driver
-    """
-    try:
-        contexts = driver.contexts
-        driver.switch_to.context(contexts[0])  # contexts[1]:webview || contexts[0]:native
-        if "NATIVE_APP" in driver.current_context:
-            return True
-    except Exception as error:
-        logger.error("quit webview fail: %s", error)
-        return False
-
-
-def __control_execute(key, driver, element):
-    switch_case = {
-        "swip": __scroll_screen(driver),
-        "click": __click_element(element)
-    }
-    switch_case.get(key)
 
 
 def failed_retry(s, t, number):
     """
+    该方法用于用例运行出错后重试
     :param s: 失败重试运行setup方法
     :param t: 失败重试运行tearDown方法
     :param number: 重试次数
@@ -172,7 +150,7 @@ def failed_retry(s, t, number):
                     return result
 
                 except Exception as error:
-                    logger.error('retry exception:%s', error)
+                    logger.error('failed retry exception:%s', error)
                     t(*a)
                     s(*a)
                 raise Exception
@@ -198,15 +176,23 @@ def main_operate(driver, platform, **kwargs):
         element_dictionary = kwargs[key]
 
         try:
-            logger.info('获取元素信息：%s', element_dictionary)
-            logger.debug('开始执行操作:%s', element_dictionary['operate_message'])
+            logger.debug('获取元素字典:%s \n开始执行操作:%s', element_dictionary, element_dictionary['operate_message'])
 
-            # 隐式等待(10秒)，使用隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
-            driver.implicitly_wait(10)
+            # 隐式等待(15秒)，隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
+            driver.implicitly_wait(20)
+
+            if 'swip' in element_dictionary['operate_type']:
+                __scroll_screen(driver)
+                continue
+
+            if 'webview' in element_dictionary['operate_type']:
+                __operate_webview(driver, element_dictionary['position'])
+                continue
 
             element = __find_element(driver, platform, element_dictionary['find_type'], element_dictionary['position'])
 
-            __control_execute(element_dictionary['operate_type'], driver, element)
+            __click_element(element)
+            logger.debug('点击了:%s', element_dictionary['position'])
 
             if element_dictionary['input_character'] != "":
                 __input_character(element, element_dictionary['input_character'])
@@ -215,7 +201,7 @@ def main_operate(driver, platform, **kwargs):
             logger.debug('执行%s操作完毕', element_dictionary['operate_message'])
 
         except Exception as error:
-            logger.error("operate element:%s \nexplain:%s \nexception occurred %s", element_dictionary['position'],
+            logger.error("operate element:%s \nexplain:%s \nexception occurred:%s", element_dictionary['position'],
                          element_dictionary['operate_message'], error)
             __error_screenshot(driver, operate_directory(
                 yaml + platform + '/error_screenshot/') + '/' + get_current_hour_minute() + '_error.png')

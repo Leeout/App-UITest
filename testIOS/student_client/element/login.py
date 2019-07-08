@@ -3,13 +3,6 @@ ios学生端登录元素
 """
 
 login = {
-    "permission_bullet_window": {
-        'position': '//XCUIElementTypeButton[@name="确定"]',
-        'find_type': 'xpath',
-        'operate_type': 'click',
-        'operate_message': '点击启动页权限弹窗',
-        'input_character': ''
-    },
     "mobile": {
         'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElement'

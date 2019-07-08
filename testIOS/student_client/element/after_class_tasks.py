@@ -24,6 +24,13 @@ after_class_tasks = {
         'operate_message': '点击【随堂任务】',
         'input_character': ''
     },
+    "into_webview": {
+        'position': 1,
+        'find_type': '',
+        'operate_type': 'webview',
+        'operate_message': '切换到H5【随堂任务】页面',
+        'input_character': ''
+    },
     "to_be_completed": {
         'position': '//XCUIElementTypeStaticText[@name="待完成"]',
         'find_type': 'xpath',
@@ -57,6 +64,13 @@ after_class_tasks = {
         'find_type': 'xpath',
         'operate_type': 'click',
         'operate_message': '点击【已点评】',
+        'input_character': ''
+    },
+    "back_native": {
+        'position': 0,
+        'find_type': '',
+        'operate_type': 'webview',
+        'operate_message': '退出H5【随堂任务】页面',
         'input_character': ''
     },
     "go_back2": {

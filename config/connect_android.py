@@ -21,7 +21,6 @@ def __get_device_version():
 
 def setup_android_device():
     try:
-        execute_shell(ADB['setup_adb'])
         desired_caps = dict()
         desired_caps['appPackage'] = "com.dadaabc.zhuozan.dadaabcstudent"  # app包名      
         desired_caps['appActivity'] = "com.dadaabc.zhuozan.dadaabcstudent.default"  # 启动的activity 
@@ -31,6 +30,7 @@ def setup_android_device():
         desired_caps['udid'] = __get_device_id()
         logger.info('设备信息：%s', desired_caps)
         return webdriver.Remote("http://192.168.132.232:4723/wd/hub", desired_caps)  # 接收指令的appium server端
+
     except Exception as error:
         logger.error("setup android device fail:%s", error)
         return False

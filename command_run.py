@@ -17,7 +17,7 @@ Args:
     
     -r, --run=                 运行测试, 可选值
                             -- ipad             ios学生端测试用例
-                            -- ios              ios家长端测试用例
+                            -- iphone           ios家长端测试用例
                             -- android          android家长端测试用例
     """
     logger.info(doc)
@@ -44,9 +44,8 @@ def __handle(opts):
                 if value not in ('ipad', 'ios', 'android'):
                     logger.error('输入的第二个参数有误！请检查该参数是否包含在允许运行的合集里，使用--help获取帮助！')
                     return
-                else:
-                    __run_case(value)
-                    return
+                __run_case(value)
+                return
 
     except Exception as err:
         logger.error('Exception: %s', str(err))
