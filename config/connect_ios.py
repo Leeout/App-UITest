@@ -35,14 +35,19 @@ def setup_ios_device():
     'app': 被测软件bundle_id 与android的包名同理,appium获取这个可以唤醒app
     "remoteUrl": appium server的地址
     """
-    desired_caps = dict()
-    desired_caps['autoAcceptAlerts'] = 'true'  # appium点击关闭权限弹窗
-    desired_caps['automationName'] = "XCUITest"
-    desired_caps['platformName'] = "ios"
-    desired_caps['deviceName'] = "ios"
-    desired_caps['udid'] = __get_device_id()
-    desired_caps['app'] = __get_bundle_id()
-    desired_caps['platformVersion'] = __get_device_version()
-    test_device = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
-    logger.info('设备信息：%s', desired_caps)
-    return test_device  # 接收指令的appium server端
+    try:
+        desired_caps = dict()
+        desired_caps['autoAcceptAlerts'] = 'true'  # appium点击关闭权限弹窗
+        desired_caps['automationName'] = "XCUITest"
+        desired_caps['platformName'] = "ios"
+        desired_caps['deviceName'] = "ios"
+        desired_caps['udid'] = __get_device_id()
+        desired_caps['app'] = __get_bundle_id()
+        desired_caps['platformVersion'] = __get_device_version()
+        test_device = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
+        logger.info('设备信息：%s', desired_caps)
+        return test_device  # 接收指令的appium server端
+
+    except Exception as error:
+        logger.error("setup ios device fail:%s", error)
+        return False

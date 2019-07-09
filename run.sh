@@ -1,7 +1,37 @@
 #!/usr/bin/env bash
-echo "被测设备类型:"$1
+get_WebDriverAgentRunner(){
+bundle_id=$(ideviceinstaller -l | grep WebDriverAgentRunner-Runner | awk 'BEGIN{ RS=","; } { print $0 }' | head -n1)
+if [[ ${bundle_id} == "com.apple.test.WebDriverAgentRunner-Runner" ]]; then
+    return 0
+else
+    return 1
+fi
+}
 
-echo "=================开始启动测试================="
-python3 command_run.py -r $1
+init_device(){
+if [[ ${1} == "ipad" || "iphone" ]]; then
+    func=`get_WebDriverAgentRunner`
+    if [[ ${func} -ne 0 ]]; then
+        udid=$(idevice_id -l | head -n1)
+        echo "开始build WebDriverAgent......"
+        xcodebuild -project /Users/jason.lik/WebDriverAgent/WebDriverAgent.xcodeproj  -scheme WebDriverAgentRunner -destination "id=$udid" test
+        echo "build WebDriverAgent完成"
+        return $?
+    else
+        return 0
+    fi
+else:
+    echo "开始启动android adb服务......"
+    adb start-server
+    return $?
+fi
+}
 
-exit 0
+init_device $1
+if [[ $? -eq 0 ]];then
+    echo "启动测试脚本......"
+    python3 command_run.py -r $1
+else
+    echo "初始化设备环境失败，请手动执行命令！"
+    exit 1
+fi

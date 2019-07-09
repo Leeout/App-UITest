@@ -16,8 +16,8 @@ Args:
     -h, --help                 显示帮助
     
     -r, --run=                 运行测试, 可选值
-                            -- ipad             iOS学生端测试用例
-                            -- ios              ios家长端测试用例
+                            -- ipad             ios学生端测试用例
+                            -- iphone           ios家长端测试用例
                             -- android          android家长端测试用例
     """
     logger.info(doc)
@@ -28,7 +28,7 @@ def __run_case(value):
     :param value: 测试用例的集合名
     :return:
     """
-    file_path = operate_directory('report/html_report/' + value + '/')
+    file_path = operate_directory('report/' + value + '/html_report/')
     if value == 'ipad':
         student_client.run_suite(file_path)
 
@@ -44,9 +44,8 @@ def __handle(opts):
                 if value not in ('ipad', 'ios', 'android'):
                     logger.error('输入的第二个参数有误！请检查该参数是否包含在允许运行的合集里，使用--help获取帮助！')
                     return
-                else:
-                    __run_case(value)
-                    return
+                __run_case(value)
+                return
 
     except Exception as err:
         logger.error('Exception: %s', str(err))

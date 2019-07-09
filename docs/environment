@@ -22,8 +22,8 @@ cnpm install -g appium-doctor
 ------------------------------------------------------------------------------------------------------------------
 android特有：
 1.安装jdk并配置
-2.安装androidSDK并配置
 
+2.安装androidSDK并配置
 ANDROID_HOME是andriod-sdk-linux下载解压到本地的路径，下载路径为：http://developer.android.com/sdk/index.html
 下载完成后，解压到/opt/androidSdk目录下,而JAVA_HOME是jdk安装路径
 统一配置：修改/etc/profile，添加内容如下：
@@ -37,8 +37,15 @@ ANDROID_HOME是andriod-sdk-linux下载解压到本地的路径，下载路径为
 ------------------------------------------------------------------------------------------------------------------
 ios特有：（需要Mac电脑支持）不支持服务器安装
 1.安装xcode
+
 2.安装libimobiledevice
+brew install libimobiledevice --HEAD
+
 3.安装ios-deploy
+npm install -g ios-deploy
+
 4.安装WebDriverAgent
-参考 https://testerhome.com/topics/14887
+参考 https://testerhome.com/topics/7220
+
+ios环境搭建整体参考 https://testerhome.com/topics/14887
 ------------------------------------------------------------------------------------------------------------------

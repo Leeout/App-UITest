@@ -5,7 +5,7 @@ import unittest
 
 from config.connect_android import setup_android_device
 
-from testAndroid.case.parent_client.test1_student_login import student_login
+from testAndroid.parent_client.case.test01_student_login import student_login
 
 
 class AppTests(unittest.TestCase):
