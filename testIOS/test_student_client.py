@@ -3,9 +3,8 @@
 """
 import unittest
 
-from common import HTMLTestRunner
+from common import HTMLTestRunner_cn
 from common import output_report
-from common.operate_element import failed_retry
 from config.connect_ios import setup_ios_device
 
 from testIOS.student_client.case.test01_student_login import setup_page_student_login
@@ -28,39 +27,30 @@ class AppTests(unittest.TestCase):
     def tearDownClass(cls):
         pass  # case执行完不退出设备
 
-    @failed_retry(setUpClass, tearDownClass, 3)
     def test01_student_login(self):
         setup_page_student_login(self.driver)
 
-    @failed_retry(setUpClass, tearDownClass, 3)
     def test02_student_info(self):
         view_student_info(self.driver)
 
-    @failed_retry(setUpClass, tearDownClass, 3)
     def test03_enter_my_course(self):
         enter_my_course(self.driver)
 
-    @failed_retry(setUpClass, tearDownClass, 3)
     def test04_enter_teacher_live_broadcast(self):
         enter_teacher_live_broadcast(self.driver)
 
-    @failed_retry(setUpClass, tearDownClass, 3)
     def test05_enter_open_class(self):
         enter_open_class(self.driver)
 
-    @failed_retry(setUpClass, tearDownClass, 3)
     def test06_enter_after_class_tasks(self):
         enter_after_class_tasks(self.driver)
 
-    @failed_retry(setUpClass, tearDownClass, 3)
     def test07_enter_audio_picture_book(self):
         enter_audio_picture_book(self.driver)
 
-    @failed_retry(setUpClass, tearDownClass, 3)
     def test08_enter_oral_practice(self):
         enter_oral_practice(self.driver)
 
-    @failed_retry(setUpClass, tearDownClass, 3)
     def test09_enter_baibao_box(self):
         enter_baibao_box(self.driver)
 
@@ -87,10 +77,13 @@ def run_suite(path):
     file_name = 'student_client_test_report.html'
     # 执行测试
     file = output_report.fileopen(path, file_name)
-    runner = HTMLTestRunner.HTMLTestRunner(
+    runner = HTMLTestRunner_cn.HTMLTestRunner(
         stream=file,
         title=u'student_client',
-        description=u'测试用例执行结果'
+        description=u'测试用例执行结果',
+        verbosity=2,
+        retry=2,
+        save_last_try=False
     )
     result = runner.run(suite)
     file.close()
