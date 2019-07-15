@@ -15,6 +15,7 @@ def execute_shell(command):
     try:
         result = os.popen(command).readlines()
         return ''.join(result).replace("\n", "")
+
     except Exception as error:
         logger.error('execute command fail:%s', error)
         return

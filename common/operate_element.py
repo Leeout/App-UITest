@@ -7,8 +7,6 @@ todo:
 import os
 
 from common.logger import logger
-from common.time_base import get_current_hour_minute
-from common.operate_directory import operate_directory
 
 get_file = os.path
 path = get_file.dirname(get_file.realpath(__file__))  # 当前文件所在目录
@@ -41,24 +39,12 @@ def __scroll_screen(driver, number=4, direction="left"):
     :param direction: 滑动屏幕的方法 默认是往左滑动
     """
     try:
-        # 滑屏第一种方法：对ios机器有效，android未尝试
+        # 滑屏的第一种方法：对ios机器有效，android未尝试
         for i in range(number):
             logger.debug('开始滑动屏幕......')
             driver.execute_script("mobile: swipe", {"direction": direction})
             logger.debug('滑动屏幕：第%s次', i + 1)
 
-        # 滑屏第二种方法：
-        # TouchAction(driver).press(x=1, y=395).move_to(x=5, y=419).release().perform()
-
-        # 滑屏第三种方法：(对ios机器无效 会报错)
-        # size = driver.get_window_size()
-        # logger.debug('设备尺寸：%s', size)
-        # x1 = int(size['width'] * 0.75)
-        # y1 = int(size['height'] * 0.5)
-        # x2 = int(size['width'] * 0.05)
-        # # for i in range(number):
-        # driver.swipe(x1, y1, x2, y1, duration)
-        # logger.info('已滑动屏幕 1次')
     except Exception as error:
         logger.error("scroll screen exception: %s", error)
         return
@@ -131,37 +117,9 @@ def __operate_webview(driver, is_switch):
         return False
 
 
-def __control_execution(driver, dict):
-    return __scroll_screen(driver) if dict['operate_type'] == 'swip' else __operate_webview(driver, dict['position'])
-
-
-def failed_retry(s, t, number):
-    """
-    该方法用于用例运行出错后重试
-    :param s: 失败重试运行setup方法
-    :param t: 失败重试运行tearDown方法
-    :param number: 重试次数
-    :return
-    """
-
-    def decorator(function):
-        def wrapper(*a, **w):
-            for i in range(number):
-                try:
-                    logger.debug('-------------------\n retry num:', i)
-                    result = function(*a, **w)
-                    logger.debug('success \n-------------------')
-                    return result
-
-                except Exception as error:
-                    logger.error('failed retry exception:%s', error)
-                    t(*a)
-                    s(*a)
-                raise Exception
-
-        return wrapper
-
-    return decorator
+def __control_execution(driver, element_key):
+    return __scroll_screen(driver) if element_key['operate_type'] == 'swip' else __operate_webview(driver, element_key[
+        'position'])
 
 
 def main_operate(driver, platform, **kwargs):
@@ -177,34 +135,29 @@ def main_operate(driver, platform, **kwargs):
     kwargs['input_character']:input character
     """
     for key in kwargs:
-        element_dictionary = kwargs[key]
+        element_key = kwargs[key]
 
         try:
-            logger.debug('获取元素字典:%s \n开始执行操作:%s', element_dictionary, element_dictionary['operate_message'])
-
-            # 隐式等待(15秒)，隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
+            logger.debug('获取元素字典:%s \n开始执行操作:%s', element_key, element_key['operate_message'])
+            # 隐式等待，隐式等待执行测试的时候，如果WebDriver没有在DOM中找到元素，将继续等待，超出设定时间后将抛出找不到元素的异常
             driver.implicitly_wait(20)
 
-            if element_dictionary['operate_type'] in ('swip', 'webview'):
-                __control_execution(driver, element_dictionary)
+            if element_key['operate_type'] in ('swip', 'webview'):
+                __control_execution(driver, element_key)
                 continue
 
-            element = __find_element(driver, platform, element_dictionary['find_type'], element_dictionary['position'])
-
+            element = __find_element(driver, platform, element_key['find_type'], element_key['position'])
             __click_element(element)
-            logger.debug('点击了:%s', element_dictionary['position'])
+            logger.debug('点击了:%s', element_key['position'])
 
-            if element_dictionary['input_character'] != "":
-                __input_character(element, element_dictionary['input_character'])
-                logger.debug('输入了字符：%s', element_dictionary['input_character'])
-
-            logger.debug('执行%s操作完毕', element_dictionary['operate_message'])
+            if element_key['input_character'] != "":
+                __input_character(element, element_key['input_character'])
+                logger.debug('输入了字符：%s', element_key['input_character'])
+            logger.debug('执行%s操作完毕', element_key['operate_message'])
 
         except Exception as error:
-            logger.error("operate element:%s \nexplain:%s \nexception occurred:%s", element_dictionary['position'],
-                         element_dictionary['operate_message'], error)
-            __error_screenshot(driver, operate_directory(
-                yaml + platform + '/error_screenshot/') + '/' + get_current_hour_minute() + '_error.png')
+            logger.error("operate element:%s \nexplain:%s \nexception occurred:%s", element_key['position'],
+                         element_key['operate_message'], error)
             driver.quit()
 
     return
