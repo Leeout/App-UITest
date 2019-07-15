@@ -4,15 +4,11 @@ from appium import webdriver
 
 from common.logger import logger
 from common.execute_command import execute_shell
-from config.command.ios_libimobiledevice import IDEVICEINSTALLER
+from config.command.ios import IDEVICEINSTALLER
 
 
 def __get_device_id():
     return execute_shell(IDEVICEINSTALLER['udid'])
-
-
-# def __get_device_name():
-#     return execute_shell(IDEVICEINSTALLER['device_name'] % __get_device_id())
 
 
 def __get_device_version():

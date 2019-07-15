@@ -1,5 +1,4 @@
 linux服务器上安装appium
-
 步骤如下：
 1，安装node，一般系统会默认安装，可使用 'node -v' 查看是否已安装node
 centos上安装node的命令是，yum install node

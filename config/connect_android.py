@@ -4,7 +4,7 @@ from appium import webdriver
 
 from common.logger import logger
 from common.execute_command import execute_shell
-from config.command.android_adb import ADB
+from config.command.android import ADB
 
 
 def __get_device_id():

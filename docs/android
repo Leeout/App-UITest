@@ -1,5 +1,4 @@
 android资料汇总：
-
 一、android adb命令汇总
 adb shell dumpsys window w |grep \/ |grep name=       获取当前正在运行的应用程序的包名以及入口activity
 
