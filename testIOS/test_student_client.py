@@ -19,7 +19,7 @@ from testIOS.student_client.case.test09_baibao_box import enter_baibao_box
 
 
 class AppTests(unittest.TestCase):
-    @classmethod  # 通过加装饰器，可让继承unittest.TestCase类的方法只执行一次setUp和tearDown
+    @classmethod  # 加装饰器，可让继承unittest.TestCase类的方法只执行一次setUp和tearDown
     def setUpClass(cls):
         cls.driver = setup_ios_device()  # 初始化加载iPad设备
 
