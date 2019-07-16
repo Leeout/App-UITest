@@ -8,7 +8,7 @@
 pylint abc-qa-app-UITest --rcfile=pylint.conf
 
 
-### 4、其它
+### 其它
 
 通过添加环境变量，解决python命令行调用问题
 
