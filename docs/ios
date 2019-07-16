@@ -9,7 +9,7 @@ ios资料汇总：
 1.终端执行: ideviceinstaller -l
 
 三、查看Xcode中SDK版本
-终端执行: xcodebuild -showsdks
+1.终端执行: xcodebuild -showsdks
 
 
 四、iOS的终端命令（一般使用第三方的开源库工具，分两种：libimobiledevice、ios-deploy）
@@ -58,6 +58,7 @@ ios-deploy --id [udid] --uninstall_only --bundle_id [bundleId] # 给指定连接
 ios-deploy --id [udid] --list_bundle_id     # 指定设备安装的所有应用，包括系统应用和第三方应用
 ios-deploy --id [udid] --exists --bundle_id     # 指定设备检查指定应用是否已经安装
 
-五、ios monkeyTest（基于 XCTestWD、swiftmonkey二次开发，实现无需插桩的iOS monkey自动化工具-fastmonkey）
+五、ios monkeyTest
+1.fastmonkey（基于 XCTestWD、swiftmonkey二次开发，实现无需插桩的iOS monkey自动化工具）
 https://testerhome.com/topics/9524
 https://testerhome.com/topics/9810

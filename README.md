@@ -19,7 +19,7 @@
 
 
 #### 2.appium server 环境安装
-在 docs > appium_environment 详细说明
+在 docs > appium_environment 有详细说明
 
 
 #### 3.项目静态代码检查
