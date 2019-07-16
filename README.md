@@ -1,27 +1,9 @@
-### 1、目录结构
-
-├── Pipfile
-├── Pipfile.lock
-├── README.md
-├── app
-├── command_run.py
-├── common
-├── config
-├── docs
-├── pylint.conf
-├── report
-├── run.sh
-├── testAndroid
-├── testIOS
-├── utils
-└── venv
-
-### 2、appium server 环境安装
+### 1、appium server 环境安装
 
 在 docs > appium_environment 有详细说明
 
 
-### 3、项目静态代码检查
+### 2、项目静态代码检查
 
 pylint abc-qa-app-UITest --rcfile=pylint.conf
 
