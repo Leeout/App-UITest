@@ -5,7 +5,7 @@ import getopt
 from common.logger import logger
 from common.operate_directory import operate_directory
 
-import testIOS.test_student_client as student_client
+import testIOS.student_client.test_student_client as student_client
 
 
 def __usage():
