@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#启动说明
+#参数$1:指定被测设备类型 如：ipad || iphone || android
+#参数$2:指定运行测试用例的次数 如：3
+
 get_WebDriverAgentRunner(){
 bundle_id=$(ideviceinstaller -l | grep WebDriverAgentRunner-Runner | awk 'BEGIN{ RS=","; } { print $0 }' | head -n1)
 if [[ ${bundle_id} == "com.apple.test.WebDriverAgentRunner-Runner" ]]; then
@@ -29,8 +33,13 @@ fi
 
 init_device $1
 if [[ $? -eq 0 ]];then
-    echo "启动测试脚本......"
-    python3 command_run.py -r $1
+    num=1
+    while [[ ${num} -le $2 ]]
+    do
+        echo -e "\n第${num}次启动测试脚本......"
+        python3 command_run.py -r $1
+        let num++
+    done
 else
     echo "初始化设备环境失败，请手动执行命令！"
     exit 1

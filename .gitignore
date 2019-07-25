@@ -110,5 +110,6 @@ venv.bak/
 .vscode/*
 .DS_Store
 *$*.xlsx
+_test_report.html
 /pylint_report.txt
 

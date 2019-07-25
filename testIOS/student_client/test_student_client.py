@@ -27,6 +27,7 @@ class AppTests(unittest.TestCase):
     def tearDownClass(cls):
         pass  # case执行完不退出设备
 
+    @unittest.skip("学生登录")
     def test01_student_login(self):
         setup_page_student_login(self.driver)
 
@@ -42,6 +43,7 @@ class AppTests(unittest.TestCase):
     def test05_enter_open_class(self):
         enter_open_class(self.driver)
 
+    @unittest.skip("课后作业")
     def test06_enter_after_class_tasks(self):
         enter_after_class_tasks(self.driver)
 
