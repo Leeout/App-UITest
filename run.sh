@@ -14,7 +14,7 @@ fi
 
 init_device(){
 if [[ ${1} == "ipad" || "iphone" ]]; then
-    func=`get_WebDriverAgentRunner`
+    func=$(get_WebDriverAgentRunner)
     if [[ ${func} -ne 0 ]]; then
         udid=$(idevice_id -l | head -n1)
         echo "开始build WebDriverAgent......"
@@ -24,21 +24,20 @@ if [[ ${1} == "ipad" || "iphone" ]]; then
     else
         return 0
     fi
-else:
+else
     echo "开始启动android adb服务......"
     adb start-server
     return $?
 fi
 }
 
-init_device $1
-if [[ $? -eq 0 ]];then
+if init_device "$1";then
     num=1
     while [[ ${num} -le $2 ]]
     do
         echo -e "\n第${num}次启动测试脚本......"
-        python3 command_run.py -r $1
-        let num++
+        python3 command_run.py -r "$1"
+        (( num++ ))
     done
 else
     echo "初始化设备环境失败，请手动执行命令！"
