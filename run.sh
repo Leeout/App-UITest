@@ -16,6 +16,8 @@ init_device(){
 if [[ ${1} == "ipad" || "iphone" ]]; then
     func=$(get_WebDriverAgentRunner)
     if [[ ${func} -ne 0 ]]; then
+        password="1234"
+        security unlock-keychain -p $password ~/Library/Keychains/login.keychain
         udid=$(idevice_id -l | head -n1)
         echo "开始build WebDriverAgent......"
         xcodebuild -project /Users/jason.lik/WebDriverAgent/WebDriverAgent.xcodeproj  -scheme WebDriverAgentRunner -destination "id=$udid" test
@@ -40,6 +42,6 @@ if init_device "$1";then
         (( num++ ))
     done
 else
-    echo "初始化设备环境失败，请手动执行命令！"
+    echo "初始化设备环境失败，请手动build WebDriverAgentRunner!"
     exit 1
 fi

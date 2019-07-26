@@ -3,7 +3,9 @@ import sys
 import getopt
 
 from common.logger import logger
+from common.ding_message_push import ding_message_push
 from common.operate_directory import operate_directory
+from config.api.dingding_api import API
 
 import testIOS.student_client.test_student_client as student_client
 
@@ -29,8 +31,10 @@ def __run_case(value):
     :return:
     """
     file_path = operate_directory('report/' + value + '/html_report/')
+    title = '### App UI Auto Test Report'
     if value == 'ipad':
-        student_client.run_suite(file_path)
+        result = student_client.run_suite(file_path)
+        ding_message_push(API['open_api'], title, result)
 
 
 def __handle(opts):

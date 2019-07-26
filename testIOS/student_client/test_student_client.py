@@ -3,8 +3,9 @@
 """
 import unittest
 
-from common import HTMLTestRunner_cn
 from common import output_report
+from common import HTMLTestRunner_cn
+from common.get_test_result import get_report_data
 from config.connect_ios import setup_ios_device
 
 from testIOS.student_client.case.test01_student_login import setup_page_student_login
@@ -75,9 +76,8 @@ def run_suite(path):
     """
     :param path: 存放测试报告的路径
     """
-    suite = __add_suite()
+    suite = __add_suite()  # 执行测试
     file_name = 'student_client_test_report.html'
-    # 执行测试
     file = output_report.fileopen(path, file_name)
     runner = HTMLTestRunner_cn.HTMLTestRunner(
         stream=file,
@@ -88,5 +88,6 @@ def run_suite(path):
         save_last_try=False
     )
     result = runner.run(suite)
+    result_format = get_report_data(file_name, result)
     file.close()
-    return result
+    return result_format
