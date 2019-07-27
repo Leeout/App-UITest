@@ -19,7 +19,7 @@ login = {
         'find_type': 'xpath',
         'operate_type': 'click',
         'operate_message': '点击密码输入框',
-        'input_character': '111111'
+        'input_character': '754590'
     },
     "confirm_login": {
         'position': '//XCUIElementTypeButton[@name="登录"]',
