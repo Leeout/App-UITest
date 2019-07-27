@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 udid=$(idevice_id -l | head -n1)
-device_name=$(ideviceinfo -u ${udid} -k DeviceName)
+device_name=$(ideviceinfo -u "${udid}" -k DeviceName)
 bundle_id=$(ideviceinstaller -l | grep DaDa英语 | awk 'BEGIN{ RS=","; } { print $0 }' | head -n1)
 echo "device name：${device_name}"
 echo "bundle id：${bundle_id}"
 
 monkey_test(){
 iproxy 8001 8001
-
-cd /Users/jason.lik/open_source_project/Fastmonkey/XCTestWD-master/XCTestWD
+cd /Users/jason.lik/open_source_project/Fastmonkey/XCTestWD-master/XCTestWD || exit
 xcodebuild -project XCTestWD.xcodeproj \
            -scheme XCTestWDUITests \
            -destination "platform=iOS,name=${device_name}" \

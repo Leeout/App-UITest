@@ -13,6 +13,7 @@ fi
 }
 
 init_device(){
+# shellcheck disable=SC2078
 if [[ ${1} == "ipad" || "iphone" ]]; then
     func=$(get_WebDriverAgentRunner)
     if [[ ${func} -ne 0 ]]; then
