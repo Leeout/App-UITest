@@ -3,7 +3,16 @@
 #参数$1:指定被测设备类型 如：ipad（学生端）|| iphone（家长端）
 #参数$2:指定运行测试用例的次数 如：3
 
+appium_server(){
+process=$(lsof -i:4723)
+if [[ ! ${process} ]]; then
+    appium -a 127.0.0.1 -p 4723
+    return 0
+fi
+}
+
 handle(){
+appium_server &
 # shellcheck disable=SC2078
 if [[ ${1} == "ipad" || "iphone" ]]; then
     udid=$(idevice_id -l | head -n1)
