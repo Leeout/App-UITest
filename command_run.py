@@ -30,7 +30,7 @@ def __run_case(value):
     :param value: 测试用例的集合名
     :return:
     """
-    file_path = operate_directory('report/' + value + '/html_report/')
+    file_path = 'report/' + value + '/html_report/'
     title = '### App UI Auto Test Report'
     if value == 'ipad':
         result = student_client.run_suite(file_path)
