@@ -12,6 +12,6 @@ def get_report_data(file_name, case):
     failure = case.failure_count
     error = case.error_count
     total = success + failure + error
-    head_title = '### App UI Auto Test'
+    head_title = '### App UI Auto Test Report'
     return head_title + '\n - ' + body_title + '  | case_total:%s | success:%s | failures:%s | errors:%s  \n ' % (
         total, success, failure, error)

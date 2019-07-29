@@ -77,7 +77,7 @@ def run_suite(path):
     :param path: 存放测试报告的路径
     """
     suite = __add_suite()  # 执行测试
-    file_name = 'student_client_test_report.html'
+    file_name = 'student_client.html'
     file = output_report.fileopen(path, file_name)
     runner = HTMLTestRunner_cn.HTMLTestRunner(
         stream=file,
