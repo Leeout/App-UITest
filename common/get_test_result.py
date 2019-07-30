@@ -10,7 +10,13 @@ def get_report_data(file_name, case):
     """
     head_title = '#### App UI Auto Test Report For %s' % get_today_date()
     body_title = file_name.split('.')[0]
-    result = head_title + '\n - ' + body_title + '  | case_total:%s | success:%s | failures:%s | errors:%s  \n ' % (
-        case.success_count + case.failure_count + case.error_count, case.success_count, case.failure_count,
-        case.error_count)
+    success = case.success_count
+    failure = case.failure_count
+    error = case.error_count
+    total = success + failure + error
+    if success != total:
+        result = head_title + '\n - ' + body_title + '  | case_total:**%s** | success:**%s** | failures:**%s** ' \
+                                                     '| errors:**%s**  \n ' % (total, success, failure, error)
+    else:
+        result = head_title + '\n - ' + body_title + '  | case_total:**%s** | success:**%s**   \n ' % (total, success)
     return result
