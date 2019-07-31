@@ -4,7 +4,6 @@ import getopt
 
 from common.logger import logger
 from common.ding_message_push import ding_message_push
-from common.operate_directory import operate_directory
 from config.api.dingding_api import API
 
 import testIOS.student_client.test_student_client as student_client
@@ -30,7 +29,7 @@ def __run_case(value):
     :param value: 测试用例的集合名
     :return:
     """
-    file_path = operate_directory('report/' + value + '/html_report/')
+    file_path = 'report/' + value + '/html_report/'
     title = '### App UI Auto Test Report'
     if value == 'ipad':
         result = student_client.run_suite(file_path)
