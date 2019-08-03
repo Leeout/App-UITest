@@ -3,7 +3,7 @@ import sys
 import getopt
 
 from common.logger import logger
-from common.ding_message_push import ding_message_push
+from common.ding_push import ding_message_push
 from config.api.dingding_api import API
 
 import testIOS.student_client.test_student_client as student_client
