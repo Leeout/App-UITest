@@ -13,5 +13,5 @@ def __case_collection(driver, platform):
 
 def setup_page_student_login(driver):
     logger.warning('测试开始......')
-    __case_collection(driver, 'parent')
+    __case_collection(driver, 'ios')
     logger.warning('测试结束......')
