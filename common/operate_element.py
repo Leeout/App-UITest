@@ -54,7 +54,7 @@ def __find_element(driver, platform, find_type, element_position):
     """
     该方法用于识别元素
     :param driver: 初始化设备信息 self.driver
-    :param platform: 被测设备系统 android | parent
+    :param platform: 被测设备系统 android | ios
     :param find_type: 发现元素方式
     :param element_position: 元素位置
     :return: element 找到的元素
@@ -62,7 +62,7 @@ def __find_element(driver, platform, find_type, element_position):
     try:
         if 'xpath' in find_type:
             element = driver.find_element_by_xpath(element_position)
-        elif 'id' in find_type and platform == 'parent':
+        elif 'id' in find_type and platform == 'ios':
             element = driver.find_element_by_accessibility_id(element_position)
         else:
             element = driver.find_element_by_id(element_position)
@@ -126,7 +126,7 @@ def main_operate(driver, platform, **kwargs):
     """
     该方法是测试用例执行时运行的主函数
     :param driver: 初始化设备信息 self.driver
-    :param platform: 被测设备系统 android | parent 用以存放到不同的报告目录下
+    :param platform: 被测设备系统 android | ios 用以存放到不同的报告目录下
     :param kwargs: 被测元素的嵌套字典集合
     kwargs['position']:element position
     kwargs['find_type']:find_type id or xpath

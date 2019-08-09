@@ -35,8 +35,8 @@ def setup_ios_device():
         desired_caps = dict()
         desired_caps['autoAcceptAlerts'] = 'true'  # appium点击关闭权限弹窗
         desired_caps['automationName'] = "XCUITest"
-        desired_caps['platformName'] = "parent"
-        desired_caps['deviceName'] = "parent"
+        desired_caps['platformName'] = "ios"
+        desired_caps['deviceName'] = "ios"
         desired_caps['udid'] = __get_device_id()
         desired_caps['app'] = __get_bundle_id()
         desired_caps['platformVersion'] = __get_device_version()
@@ -45,5 +45,5 @@ def setup_ios_device():
         return test_device  # 接收指令的appium server端
 
     except Exception as error:
-        logger.error("setup parent device fail:%s", error)
+        logger.error("setup ios device fail:%s", error)
         return False
