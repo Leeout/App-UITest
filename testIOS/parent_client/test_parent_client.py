@@ -10,7 +10,7 @@ from testIOS.parent_client.case.test01_student_login import setup_page_student_l
 
 get_file = os.path
 path = get_file.dirname(get_file.realpath(__file__))
-yaml = get_file.join(path, "../report/error_screenshot/ios")
+yaml = get_file.join(path, "../report/error_screenshot/parent")
 
 
 class AppTests(unittest.TestCase):

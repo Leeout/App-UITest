@@ -94,7 +94,7 @@ def run_suite(path):
     result_format = get_report_data(file_name, result)
     ding_message_push(API['open_api'], file_name, result_format)
     file.close()
-    return result_format
+    return
 
 
 if __name__ == '__main__':
