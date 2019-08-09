@@ -1,11 +1,14 @@
 """
 运行iPad测试的入口
 """
+import sys
 import unittest
 
 from common import output_report
 from common import HTMLTestRunner_cn
+from common.ding_push import ding_message_push
 from common.get_test_result import get_report_data
+from config.api.dingding_api import API
 from config.connect_ios import setup_ios_device
 
 from testIOS.student_client.case.test01_student_login import setup_page_student_login
@@ -89,5 +92,10 @@ def run_suite(path):
     )
     result = runner.run(suite)
     result_format = get_report_data(file_name, result)
+    ding_message_push(API['open_api'], file_name, result_format)
     file.close()
     return result_format
+
+
+if __name__ == '__main__':
+    run_suite('report/' + sys.argv[1] + '/html_report/')
