@@ -44,7 +44,7 @@ def __handle(opts):
                 return
 
             if command in ('-r', '--run'):
-                if value not in ('ipad', 'ios', 'android'):
+                if value not in ('ipad', 'parent', 'android'):
                     logger.error('输入的第二个参数有误！请检查该参数是否包含在允许运行的合集里，使用--help获取帮助！')
                     return
                 __run_case(value)
