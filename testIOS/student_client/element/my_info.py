@@ -4,7 +4,7 @@ ios学生端主页-头部 可点击的按钮元素 组合
 
 my_info = {
     "user_avatar": {
-        'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
+        'position': '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementType'
                     'Other[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther',
         'find_type': 'xpath',
@@ -27,7 +27,7 @@ my_info = {
         'input_character': ''
     },
     "medal_wall": {
-        'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/'
+        'position': '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/'
                     'XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElement'
                     'TypeOther[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementType'
                     'Other',

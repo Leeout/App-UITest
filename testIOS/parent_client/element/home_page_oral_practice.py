@@ -4,7 +4,7 @@ ios家长端口语练习页面元素
 
 home_page_oral_practice = {
     'oral_practice': {
-        'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/'
+        'position': '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/'
                     'XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElement'
                     'TypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElement'
                     'TypeOther/XCUIElementTypeImage',
@@ -14,7 +14,7 @@ home_page_oral_practice = {
         'input_character': ''
     },
     'Leader_board': {
-        'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/'
+        'position': '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/'
                     'XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElement'
                     'TypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElement'
                     'TypeOther/XCUIElementTypeImage',

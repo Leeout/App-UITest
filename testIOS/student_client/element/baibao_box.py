@@ -4,7 +4,7 @@ ios学生端主页-百宝箱 元素
 
 baibao_box = {
     "entrance": {
-        'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
+        'position': '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementType'
                     'Other[5]',
         'find_type': 'xpath',

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 udid=$(idevice_id -l | head -n1)
 device_name=$(ideviceinfo -u "${udid}" -k DeviceName)
-bundle_id=$(ideviceinstaller -l | grep DaDa英语 | awk 'BEGIN{ RS=","; } { print $0 }' | head -n1)
+bundle_id=$(ideviceinstaller -l | grep XXXX | awk 'BEGIN{ RS=","; } { print $0 }' | head -n1)
 echo "device name：${device_name}"
 echo "bundle id：${bundle_id}"
 

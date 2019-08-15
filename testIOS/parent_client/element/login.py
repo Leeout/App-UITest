@@ -11,7 +11,7 @@ login = {
         "input_character": ""
     },
     "mobile": {
-        "position": '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
+        "position": '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementType'
                     'Other[1]/XCUIElementTypeTextField',
         "find_type": "xpath",
@@ -20,7 +20,7 @@ login = {
         "input_character": "15601754590"
     },
     "password": {
-        "position": '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
+        "position": '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementType'
                     'Other[2]/XCUIElementTypeSecureTextField',
         "find_type": "xpath",

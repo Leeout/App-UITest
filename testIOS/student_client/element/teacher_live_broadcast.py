@@ -18,7 +18,7 @@ teacher_live_broadcast = {
         'input_character': ''
     },
     "previous_live_broadcasts": {
-        'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
+        'position': '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElement'
                     'TypeOther[2]',
         'find_type': 'xpath',

@@ -4,7 +4,7 @@ ios学生端登录元素
 
 login = {
     "mobile": {
-        'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
+        'position': '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElement'
                     'TypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeTextField',
         'find_type': 'xpath',
@@ -13,7 +13,7 @@ login = {
         'input_character': '15601754590'
     },
     "password": {
-        'position': '//XCUIElementTypeApplication[@name="DaDa英语"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
+        'position': '//XCUIElementTypeApplication[@name="XXXX"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI'
                     'ElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElement'
                     'TypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeSecureTextField',
         'find_type': 'xpath',
