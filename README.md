@@ -1,6 +1,6 @@
 ## appium+python实现的APP UI自动化测试（该工程仅支持iOS，Android使用soloπ做自动化）
 
-----
+
 
 ### 1、appium环境安装
 
